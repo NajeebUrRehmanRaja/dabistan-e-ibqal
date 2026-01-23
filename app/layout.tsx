@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 The sole purpose of this institution is to awaken the young generation of Pakistan to know their roots and to make them aware of the true essence of Islam i. e., Tauheed (Oneness of Allah), Finality of Prophethood (PBUH) and the core values of Iqbal's pivotal thought i. e., Khudi (Self).
   `,
   icons: {
-    icon: '/favicon.ico', // this sets the favicon
+    icon: '/favicon.svg', // this sets the favicon
   },
 };
 

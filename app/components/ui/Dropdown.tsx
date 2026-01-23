@@ -10,7 +10,7 @@ export default function Dropdown({ children, width = "w-66" }: DropdownProps) {
   return (
     <ErrorBoundary>
       <ul
-      className={`absolute left-0 mt-2 ${width} bg-white space-y-3 text-gray-800 shadow-lg rounded-sm`}
+      className={`absolute left-0 mt-2 ${width} overflow-y-auto max-h-100 bg-white space-y-3 text-gray-800 shadow-lg rounded-sm`}
     >
       {children}
     </ul>

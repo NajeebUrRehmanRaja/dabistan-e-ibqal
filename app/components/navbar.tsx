@@ -75,7 +75,7 @@ export default function Navbar() {
               onClick={() => {
                 setIsDabistanOpen(!isDabistanOpen);
               }}
-              className="flex items-center gap-1 hover:text-gray-200 cursor-pointer hover:text-gray-500"
+              className="flex items-center gap-1 hover:text-gray-200 cursor-pointer hover:text-gray-200"
             >
               Dabistan
               <Arrow open={isDabistanOpen} />
@@ -83,11 +83,11 @@ export default function Navbar() {
 
             {isDabistanOpen && (
               <Dropdown>
-                <li className="px-4 py-2 mt-2 hover:bg-gray-300 cursor-pointer border-b-1">Vision Statement</li>
-                <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer border-b-1">Mission Statement</li>
-                <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer border-b-1">Objectives</li>
-                <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer border-b-1">Introduction</li>
-                <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer">History</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Vision Statement</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Mission Statement</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Objectives</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Introduction</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">History</li>
               </Dropdown>
             )}
           </li>
@@ -106,15 +106,15 @@ export default function Navbar() {
 
             {isIqbalOpen && (
               <Dropdown>
-                <li className="px-4 py-2 mt-2 hover:bg-gray-300 cursor-pointer border-b-1">Biography</li>
-                <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer border-b-1">Poetry</li>
-                <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer">FAQs</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Biography</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Poetry</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">FAQs</li>
               </Dropdown>
             )}
           </li>
 
           {/* Jinnah Dropdown */}
-          <li className="cursor-pointer">Jinnah</li>
+          <li className="hover:text-gray-200 cursor-pointer">Jinnah</li>
 
           {/* Pakistan Dropdown */}
           <li ref={pakistanRef} className="relative">
@@ -122,16 +122,16 @@ export default function Navbar() {
               onClick={() => {
                 setIsPakistanOpen(!isPakistanOpen);
               }}
-              className="flex items-center gap-1 hover:text-gray-200 cursor-pointer hover:text-gray-500"
+              className="flex items-center gap-1 hover:text-gray-200 cursor-pointer"
             >
               Pakistan
               <Arrow open={isPakistanOpen} />
             </button>
             {isPakistanOpen && (
               <Dropdown>
-                <li className="px-4 py-2 mt-2 hover:bg-gray-300 cursor-pointer border-b-1">Ideology Of Pakistan (Eng)</li>
-                <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer border-b-1">Ideology Of Pakistan (Urdu)</li>
-                <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer">Muslim History In Subcontinent</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Ideology Of Pakistan (Eng)</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Ideology Of Pakistan (Urdu)</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Muslim History In Subcontinent</li>
               </Dropdown>
             )}
           </li>
@@ -145,22 +145,22 @@ export default function Navbar() {
               onClick={() => {
                 setIsLecturesOpen(!isLecturesOpen);
               }}
-              className="flex items-center gap-1 hover:text-gray-200 cursor-pointer hover:text-gray-500"
+              className="flex items-center gap-1 hover:text-gray-200 cursor-pointer"
             >
               Lectures
               <Arrow open={isLecturesOpen} />
             </button>
             {isLecturesOpen && (
               <Dropdown>
-                <li className="px-4 py-2 mt-2 hover:bg-gray-300 border-b-1 cursor-pointer">Dr. Javaid Iqbal</li>
-                <li className="px-4 py-2 hover:bg-gray-300 border-b-1 cursor-pointer">Ahmed Javaid</li>
-                <li className="px-4 py-2 hover:bg-gray-300 border-b-1 cursor-pointer">Mian Iqbal Salahuddin</li>
-                <li className="px-4 py-2 hover:bg-gray-300 border-b-1 cursor-pointer">Dr. Atiya Syed</li>
-                <li className="px-4 py-2 hover:bg-gray-300 border-b-1 cursor-pointer">Brig(R) Taimur Afzal Khan</li>
-                <li className="px-4 py-2 hover:bg-gray-300 border-b-1 cursor-pointer">Brig(R) Waheed Uz Zaman</li>
-                <li className="px-4 py-2 hover:bg-gray-300 border-b-1 cursor-pointer">Dr. Iqbal Chawla</li>
-                <li className="px-4 py-2 hover:bg-gray-300 border-b-1 cursor-pointer">Dr. Hassan Raza Iqbali</li>
-                <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer">Maj Gen (R) Qasim Qureshi</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Dr. Javaid Iqbal</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Ahmed Javaid</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Mian Iqbal Salahuddin</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Dr. Atiya Syed</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Brig(R) Taimur Afzal Khan</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Brig(R) Waheed Uz Zaman</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Dr. Iqbal Chawla</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Dr. Hassan Raza Iqbali</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Maj Gen (R) Qasim Qureshi</li>
               </Dropdown>
             )}
           </li>
@@ -174,17 +174,17 @@ export default function Navbar() {
               onClick={() => {
                 setIsMultimediaOpen(!isMultimediaOpen);
               }}
-              className="flex items-center gap-1 hover:text-gray-200 cursor-pointer hover:text-gray-500"
+              className="flex items-center gap-1 hover:text-gray-200 cursor-pointer"
             >
               Multimedia
               <Arrow open={isMultimediaOpen} />
             </button>
             {isMultimediaOpen && (
               <Dropdown>
-                <li className="px-4 py-2 mt-2 hover:bg-gray-300 cursor-pointer border-b-1">Art Work</li>
-                <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer border-b-1">Digital Art Work</li>
-                <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer border-b-1">Videos</li>
-                <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer">Iqbal Pictures</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Art Work</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Digital Art Work</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Videos</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Iqbal Pictures</li>
               </Dropdown>
             )}
           </li>
@@ -198,23 +198,23 @@ export default function Navbar() {
               onClick={() => {
                 setIsAboutOpen(!isAboutOpen);
               }}
-              className="flex items-center gap-1 hover:text-gray-200 cursor-pointer hover:text-gray-500"
+              className="flex items-center gap-1 hover:text-gray-200 cursor-pointer"
             >
               About
               <Arrow open={isAboutOpen} />
             </button>
             {isAboutOpen && (
               <Dropdown>
-                <li className="px-4 py-2 mt-2 hover:bg-gray-300 cursor-pointer border-b-1">About Us</li>
-                <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer border-b-1">Patron Chief</li>
-                <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer border-b-1">President's Message</li>
-                <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer">Gallery</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">About Us</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Patron Chief</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">President's Message</li>
+                <li className="p-4 hover:bg-gray-200 cursor-pointer transition-all ease-in-out hover:border-b-1">Gallery</li>
               </Dropdown>
             )}
           </li>
         </ul>
 
-        <button className="hidden lg:block px-5 py-2 bg-black text-white rounded-lg hover:bg-gray-200 transition-colors cursor-pointer">
+        <button className="hidden lg:block px-5 py-2 bg-black text-white rounded-lg hover:bg-gray-900 transition-colors cursor-pointer">
           Register
         </button>
         </div>
