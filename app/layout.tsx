@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/components/navbar";
-import Footer from "@/app/components/footer";
+// import Footer from "@/app/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +21,16 @@ export const metadata: Metadata = {
 The sole purpose of this institution is to awaken the young generation of Pakistan to know their roots and to make them aware of the true essence of Islam i. e., Tauheed (Oneness of Allah), Finality of Prophethood (PBUH) and the core values of Iqbal's pivotal thought i. e., Khudi (Self).
   `,
   icons: {
-    icon: '/favicon.svg', // this sets the favicon
+    icon: [
+      {
+        url: "/favicon-black.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/favicon.svg",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
   },
 };
 
@@ -31,8 +40,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="bg-white">
-      <body suppressHydrationWarning className="bg-white min-h-screen">
+    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} bg-white`}>
+      <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} bg-white min-h-screen`}>
         <Navbar />
         {children}
         {/* <Footer /> */}

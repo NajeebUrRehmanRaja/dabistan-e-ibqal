@@ -148,7 +148,7 @@ export default function Navbar() {
                 ))}
               </ul>
 
-              <button className="px-6 py-2.5 bg-pink-600 text-white text-sm font-semibold rounded-full shadow-lg hover:bg-pink-700 hover:shadow-pink-900/30 transform hover:-translate-y-0.5 transition-all duration-200">
+              <button className="px-6 py-2.5 bg-pink-600 text-white text-sm font-semibold rounded-full shadow-lg hover:bg-pink-700 hover:shadow-pink-900/30 transform hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
                 Register
               </button>
             </div>

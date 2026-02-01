@@ -8,22 +8,22 @@ const speakersData = [
   },
   {
     name: "Ahmed Javaid",
-    role: "Scholar",
+    role: "Scholar/Exective Member",
     image: "/ahmed_javaid.jpg",
   },
   {
     name: "Mian Iqbal Salahuddin",
-    role: "Scholar",
+    role: "President",
     image: "/mian_iqbal.jpg",
   },
   {
     name: "Dr. Atiya Syed",
-    role: "Scholar",
+    role: "Scholar/Exective Member",
     image: "/dr_atiya_syed.jpg",
   },
   {
     name: "Hassan Raza Iqbali",
-    role: "Scholar",
+    role: "Iqbal Scholar",
     image: "/hassan_raza_iqbali.jpg",
   }
 ];
@@ -60,7 +60,7 @@ export default function Speakers() {
                             </div>
                             
                             <div className="p-5 text-center flex-grow flex flex-col justify-center bg-white border-t border-gray-100">
-                                <h3 className="text-lg font-bold text-gray-800 line-clamp-1 group-hover:text-pink-900 transition-colors">
+                                <h3 className="text-lg font-bold text-gray-800 group-hover:text-pink-900 transition-colors">
                                     {speaker.name}
                                 </h3>
                                 {speaker.role && (
