@@ -21,7 +21,7 @@ export default function Carousel() {
       autoplay={{ delay: 3000 }}
     //   pagination={{ clickable: true }}
       navigation
-      className="w-full h-[400px]"
+      className="w-full h-[300px] sm:h-[550px]"
     >
       <SwiperSlide>
         <Image
