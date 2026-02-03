@@ -2,21 +2,21 @@ import FacebookSDK from "./ui/facebookSDK";
 import { MessageSquare, Calendar, Users, Radio } from "lucide-react";
 
 const sessionFeatures = [
-  {
-    title: "Live Interaction",
-    description: "Engage directly with Mian Iqbal Salahuddin during our weekly live streams.",
-    icon: Radio,
-  },
+  // {
+  //   title: "Live Interaction",
+  //   description: "Engage directly with Mian Iqbal Salahuddin during our weekly live streams.",
+  //   icon: Radio,
+  // },
   {
     title: "Weekly Schedule",
     description: "Join us every week for deep dives into Iqbal's philosophy.",
     icon: Calendar,
   },
-  {
-    title: "Expert Scholar",
-    description: "Learn from distinguished thinker and subject matter expert.",
-    icon: Users,
-  },
+  // {
+  //   title: "Expert Scholar",
+  //   description: "Learn from distinguished thinker and subject matter expert.",
+  //   icon: Users,
+  // },
   {
     title: "Open Discussions",
     description: "Participate in thought-provoking Q&A sessions.",
@@ -26,7 +26,7 @@ const sessionFeatures = [
 
 export default function WeeklySessions() {
   return (
-    <section className="relative overflow-hidden bg-white py-14 sm:py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-white py-14 sm:py-16 lg:py-24 px-5">
       {/* Background Accent */}
       <div className="absolute top-0 right-0 hidden h-full w-1/3 translate-x-20 skew-x-[-12deg] bg-gray-50 -z-10 lg:block" />
 
@@ -100,15 +100,15 @@ export default function WeeklySessions() {
           </div>
 
           {/* Right Column – Facebook Feed */}
-          <div className="relative mx-auto w-full max-w-lg">
+          <div className="relative mx-auto w-full max-w-[500px]">
             <div className="absolute -inset-4 -z-10 rounded-3xl bg-pink-900/5 blur-2xl" />
 
-            <div className="flex min-h-[420px] flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-2xl sm:min-h-[480px]">
+            <div className="flex min-h-[500px] flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-2xl sm:min-h-[600px]">
               {/* Header */}
               <div className="flex items-center justify-between bg-pink-900 p-3 text-white sm:p-4">
                 <span className="flex items-center gap-2 text-sm font-bold sm:text-base">
                   <Radio size={18} className="animate-pulse" />
-                  Live Feed
+                  Live Update
                 </span>
                 <span className="text-[10px] uppercase tracking-widest opacity-80 sm:text-xs">
                   Official Page
@@ -116,19 +116,17 @@ export default function WeeklySessions() {
               </div>
 
               {/* Feed */}
-              <div className="relative flex flex-grow justify-center overflow-hidden bg-gray-50 p-3">
+              <div className="flex-grow w-full overflow-hidden">
                 <FacebookSDK />
-
-                <div className="w-full max-w-full">
-                  <div
-                    className="flex items-center justify-center fb-page w-full"
+                <div
+                    className="fb-page w-full h-full"
                     data-href="https://www.facebook.com/DabistaneIqbal/"
                     data-tabs="timeline"
                     data-adapt-container-width="true"
                     data-hide-cover="false"
                     data-show-facepile="true"
+                    data-width="500"
                   />
-                </div>
               </div>
             </div>
           </div>
