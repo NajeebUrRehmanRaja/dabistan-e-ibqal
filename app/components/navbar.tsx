@@ -1,76 +1,128 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import logo from "../../public/Dabistan-e-Iqbal-logo.svg";
 import ErrorBoundary from "@/app/ErrorBoundary/ErrorBoundary";
 
 // --- Navigation Data Configuration ---
-const navItems = [
+// Type definitions for nested navigation structure
+type NavItem = {
+  label: string;
+  href?: string;
+  children?: (NavChild | NavItemWithChildren)[];
+};
+
+type NavChild = {
+  label: string;
+  href: string;
+};
+
+type NavItemWithChildren = {
+  label: string;
+  href?: string;
+  children: NavChild[];
+};
+
+const navItems: NavItem[] = [
   {
     label: "Dabistan",
     children: [
-      "Vision Statement",
-      "Mission Statement",
-      "Objectives",
-      "Introduction",
-      "History",
+      { label: "Introduction", href: "/dabistan/introduction" },
+      { label: "History", href: "/dabistan/history" },
+      { label: "Vision Statement", href: "/dabistan/vision" },
+      { label: "Mission Statement", href: "/dabistan/mission" },
+      { label: "Objectives", href: "/dabistan/objectives" },
     ],
   },
   {
-    label: "Allama Iqbal",
-    children: ["Biography", "Poetry", "FAQs"],
-  },
-  {
-    label: "Jinnah",
-    href: "#", // No children, direct link
-  },
-  {
-    label: "Pakistan",
+    label: "Personalities",
     children: [
-      "Ideology Of Pakistan (Eng)",
-      "Ideology Of Pakistan (Urdu)",
-      "Muslim History In Subcontinent",
+      {
+        label: "Allama Iqbal",
+        href: "/personalities/allama-iqbal",
+        children: [
+          { label: "Biography", href: "/personalities/allama-iqbal/biography" },
+          { label: "PDF", href: "/personalities/allama-iqbal/pdfs" },
+          { label: "Quotes from Biography", href: "/personalities/allama-iqbal/quotes" },
+          { label: "Gallery", href: "/personalities/allama-iqbal/gallery" },
+          { label: "Kalam e Iqbal (Performative)", href: "/personalities/allama-iqbal/kalam/performative" },
+          { label: "Kalam e Iqbal (Recitation)", href: "/personalities/allama-iqbal/kalam/recitation" },
+        ],
+      },
+      {
+        label: "Quaid e Azam",
+        href: "/personalities/quaid-e-azam",
+        children: [
+          { label: "Biography", href: "#" },
+          { label: "PDF", href: "#" },
+          { label: "Quotes from Biography", href: "#" },
+          { label: "Gallery", href: "#" },
+        ],
+      },
+      {
+        label: "Maulana Rumi",
+        href: "/personalities/maulana-rumi",
+        children: [
+          { label: "Biography", href: "#" },
+          { label: "PDF", href: "#" },
+          { label: "Quotes from Biography", href: "#" },
+          { label: "Kalam (Performative)", href: "#" },
+          { label: "Kalam (Recitation)", href: "#" },
+        ],
+      },
     ],
   },
+  // {
+  //   label: "Pakistan",
+  //   children: [
+  //     "Ideology Of Pakistan (Eng)",
+  //     "Ideology Of Pakistan (Urdu)",
+  //     "Muslim History In Subcontinent",
+  //   ],
+  // },
   {
     label: "Lectures",
     children: [
-      "Dr. Javaid Iqbal",
-      "Ahmed Javaid",
-      "Mian Iqbal Salahuddin",
-      "Dr. Atiya Syed",
-      "Brig(R) Taimur Afzal Khan",
-      "Brig(R) Waheed Uz Zaman",
-      "Dr. Iqbal Chawla",
-      "Dr. Hassan Raza Iqbali",
-      "Maj Gen (R) Qasim Qureshi",
+      { label: "Dr. Javaid Iqbal", href: "#" },
+      { label: "Ahmed Javaid", href: "#" },
+      { label: "Mian Iqbal Salahuddin", href: "#" },
+      { label: "Dr. Atiya Syed", href: "#" },
+      { label: "Brig(R) Taimur Afzal Khan", href: "#" },
+      { label: "Brig(R) Waheed Uz Zaman", href: "#" },
+      { label: "Dr. Iqbal Chawla", href: "/lectures/dr" },
+      { label: "Dr. Hassan Raza Iqbali", href: "/lectures/dr-hassan" },
+      { label: "Maj Gen (R) Qasim Qureshi", href: "/lectures/maj-gen" },
     ],
   },
-  {
-    label: "Multimedia",
-    children: ["Art Work", "Digital Art Work", "Videos", "Iqbal Pictures"],
-  },
-  {
-    label: "About",
-    children: [
-      "About Us",
-      "Patron Chief",
-      "President's Message",
-      "Gallery",
-    ],
-  },
+  // {
+  //   label: "Multimedia",
+  //   children: ["Art Work", "Digital Art Work", "Videos", "Iqbal Pictures"],
+  // },
+  // {
+  //   label: "About",
+  //   children: [
+  //     "About Us",
+  //     "Patron Chief",
+  //     "President's Message",
+  //     "Gallery",
+  //   ],
+  // },
 ];
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeNestedDropdown, setActiveNestedDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [mobileNestedExpanded, setMobileNestedExpanded] = useState<string | null>(null);
 
   // Close dropdowns on click outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (!(event.target as Element).closest("nav")) {
         setActiveDropdown(null);
+        setActiveNestedDropdown(null);
       }
     };
     document.addEventListener("click", handleClickOutside);
@@ -84,13 +136,15 @@ export default function Navbar() {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <Image
-                src={logo}
-                alt="Dabistan-e-Iqbal Logo"
-                width={60}
-                height={60}
-                className="w-14 h-14 sm:w-[60px] sm:h-[60px] cursor-pointer hover:opacity-90 transition-opacity"
-              />
+              <Link href="/">
+                <Image
+                  src={logo}
+                  alt="Dabistan-e-Iqbal Logo"
+                  width={60}
+                  height={60}
+                  className="w-14 h-14 sm:w-[60px] sm:h-[60px] cursor-pointer hover:opacity-90 transition-opacity"
+                />
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
@@ -101,7 +155,6 @@ export default function Navbar() {
                     key={item.label}
                     className="relative group"
                     onMouseEnter={() => item.children && setActiveDropdown(item.label)}
-                    // onMouseLeave={() => setActiveDropdown(null)}
                   >
                     {item.children ? (
                       <button
@@ -130,17 +183,60 @@ export default function Navbar() {
 
                     {/* Desktop Dropdown Menu */}
                     {item.children && activeDropdown === item.label && (
-                      <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl overflow-hidden animate-fadeIn origin-top-left">
+                      <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl overflow-visible animate-fadeIn origin-top-left z-50">
                          <div className="py-2">
-                          {item.children.map((child, idx) => (
-                            <a
-                              key={idx}
-                              href="#"
-                              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-700 transition-colors border-l-2 border-transparent hover:border-pink-600"
-                            >
-                              {child}
-                            </a>
-                          ))}
+                          {item.children.map((child, idx) => {
+                            // Check if child is a nested object with children
+                            const isNestedItem = typeof child === 'object' && 'children' in child;
+                            
+                            if (isNestedItem) {
+                              return (
+                                <div 
+                                  key={idx}
+                                  className="relative group/nested"
+                                >
+                                  <button
+                                    onClick={() =>
+                                      setActiveNestedDropdown(
+                                        activeNestedDropdown === child.label ? null : child.label
+                                      )
+                                    }
+                                    className="w-full flex items-center justify-between px-4 py-2.5 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-700 transition-colors border-l-2 border-transparent hover:border-pink-600"
+                                  >
+                                    {child.label}
+                                    <ChevronDown className={`w-4 h-4 transition-transform ${activeNestedDropdown === child.label ? "rotate-180" : ""}`} />
+                                  </button>
+                                  
+                                  {/* Nested Dropdown - Shows below like parent dropdowns */}
+                                  {activeNestedDropdown === child.label && (
+                                    <div className="absolute top-full left-10 mt-1 w-54 bg-gray-100 rounded-lg shadow-xl overflow-hidden animate-fadeIn z-[60]">
+                                      <div className="py-2">
+                                        {child.children.map((subChild, subIdx) => (
+                                          <a
+                                            key={subIdx}
+                                            href={subChild.href}
+                                            className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-700 transition-colors border-l-2 border-transparent hover:border-pink-600"
+                                          >
+                                            {subChild.label}
+                                          </a>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            } else {
+                              return (
+                                <a
+                                  key={idx}
+                                  href={child.href}
+                                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-700 transition-colors border-l-2 border-transparent hover:border-pink-600"
+                                >
+                                  {child.label}
+                                </a>
+                              );
+                            }
+                          })}
                         </div>
                       </div>
                     )}
@@ -194,19 +290,61 @@ export default function Navbar() {
                     </button>
                     <div
                       className={`overflow-hidden transition-all duration-300 ${
-                        mobileExpanded === item.label ? "max-h-96" : "max-h-0"
+                        mobileExpanded === item.label ? "max-h-[1000px]" : "max-h-0"
                       }`}
                     >
                       <div className="bg-[#24145a] rounded-lg mb-2">
-                        {item.children.map((child, idx) => (
-                          <a
-                            key={idx}
-                            href="#"
-                            className="block px-5 py-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 first:rounded-t-lg last:rounded-b-lg"
-                          >
-                            {child}
-                          </a>
-                        ))}
+                        {item.children.map((child, idx) => {
+                          // Check if child is a nested object with children
+                          const isNestedItem = typeof child === 'object' && 'children' in child;
+                          
+                          if (isNestedItem) {
+                            return (
+                              <div key={idx}>
+                                <button
+                                  onClick={() =>
+                                    setMobileNestedExpanded(
+                                      mobileNestedExpanded === child.label ? null : child.label
+                                    )
+                                  }
+                                  className="w-full flex items-center justify-between px-5 py-3 text-sm text-gray-300 hover:text-white hover:bg-white/5"
+                                >
+                                  {child.label}
+                                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileNestedExpanded === child.label ? "rotate-180" : ""}`} />
+                                </button>
+                                
+                                {/* Nested Mobile Menu */}
+                                <div
+                                  className={`overflow-hidden transition-all duration-300 ${
+                                    mobileNestedExpanded === child.label ? "max-h-96" : "max-h-0"
+                                  }`}
+                                >
+                                  <div className="bg-[#1a0f42] ml-3 rounded-lg">
+                                    {child.children.map((subChild, subIdx) => (
+                                      <a
+                                        key={subIdx}
+                                        href={subChild.href}
+                                        className="block px-5 py-2.5 text-xs text-gray-400 hover:text-white hover:bg-white/5 first:rounded-t-lg last:rounded-b-lg"
+                                      >
+                                        {subChild.label}
+                                      </a>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          } else {
+                            return (
+                              <a
+                                key={idx}
+                                href={child.href}
+                                className="block px-5 py-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 first:rounded-t-lg last:rounded-b-lg"
+                              >
+                                {child.label}
+                              </a>
+                            );
+                          }
+                        })}
                       </div>
                     </div>
                   </>
@@ -241,6 +379,19 @@ function ChevronDown({ className }: { className?: string }) {
       viewBox="0 0 24 24"
     >
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+    </svg>
+  );
+}
+
+function ChevronRight({ className }: { className?: string }) {
+  return (
+    <svg 
+      className={className} 
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
     </svg>
   );
 }
