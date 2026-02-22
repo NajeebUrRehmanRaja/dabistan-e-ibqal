@@ -30,7 +30,7 @@ const blogs = [
 
 export default function BlogsSection() {
   return (
-    <section className="py-12 px-5 bg-gray-50">
+    <section className="py-12 px-5">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-10 space-y-2">
@@ -46,7 +46,7 @@ export default function BlogsSection() {
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {blogs.map((blog, index) => (
-            <article 
+            <article
               key={index}
               className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col"
             >
