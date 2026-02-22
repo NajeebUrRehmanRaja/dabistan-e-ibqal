@@ -158,11 +158,10 @@ export default function Navbar() {
                   >
                     {item.children ? (
                       <button
-                        className={`flex items-center gap-1 text-[15px] font-medium transition-colors duration-200 ${
-                          activeDropdown === item.label
-                            ? "text-pink-300"
-                            : "text-white/90 hover:text-white"
-                        }`}
+                        className={`flex items-center gap-1 text-[15px] font-medium transition-colors duration-200 ${activeDropdown === item.label
+                          ? "text-pink-300"
+                          : "text-white/90 hover:text-white"
+                          }`}
                         onClick={() =>
                           setActiveDropdown(
                             activeDropdown === item.label ? null : item.label
@@ -184,14 +183,14 @@ export default function Navbar() {
                     {/* Desktop Dropdown Menu */}
                     {item.children && activeDropdown === item.label && (
                       <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl overflow-visible animate-fadeIn origin-top-left z-50">
-                         <div className="py-2">
+                        <div className="py-2">
                           {item.children.map((child, idx) => {
                             // Check if child is a nested object with children
                             const isNestedItem = typeof child === 'object' && 'children' in child;
-                            
+
                             if (isNestedItem) {
                               return (
-                                <div 
+                                <div
                                   key={idx}
                                   className="relative group/nested"
                                 >
@@ -206,19 +205,19 @@ export default function Navbar() {
                                     {child.label}
                                     <ChevronDown className={`w-4 h-4 transition-transform ${activeNestedDropdown === child.label ? "rotate-180" : ""}`} />
                                   </button>
-                                  
+
                                   {/* Nested Dropdown - Shows below like parent dropdowns */}
                                   {activeNestedDropdown === child.label && (
                                     <div className="absolute top-full left-10 mt-1 w-54 bg-gray-100 rounded-lg shadow-xl overflow-hidden animate-fadeIn z-[60]">
                                       <div className="py-2">
                                         {child.children.map((subChild, subIdx) => (
-                                          <a
+                                          <Link
                                             key={subIdx}
                                             href={subChild.href}
                                             className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-700 transition-colors border-l-2 border-transparent hover:border-pink-600"
                                           >
                                             {subChild.label}
-                                          </a>
+                                          </Link>
                                         ))}
                                       </div>
                                     </div>
@@ -227,13 +226,13 @@ export default function Navbar() {
                               );
                             } else {
                               return (
-                                <a
+                                <Link
                                   key={idx}
                                   href={child.href}
                                   className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-700 transition-colors border-l-2 border-transparent hover:border-pink-600"
                                 >
                                   {child.label}
-                                </a>
+                                </Link>
                               );
                             }
                           })}
@@ -257,9 +256,9 @@ export default function Navbar() {
                 aria-label="Toggle menu"
               >
                 {isMobileMenuOpen ? (
-                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                 ) : (
-                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
                 )}
               </button>
             </div>
@@ -268,9 +267,8 @@ export default function Navbar() {
 
         {/* Mobile Mobile Drawer */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out bg-[#2E1A72] border-t border-white/10 ${
-            isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-          }`}
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out bg-[#2E1A72] border-t border-white/10 ${isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+            }`}
         >
           <div className="px-4 py-6 space-y-1">
             {navItems.map((item) => (
@@ -289,15 +287,14 @@ export default function Navbar() {
                       <ChevronDown className={`w-5 h-5 transition-transform ${mobileExpanded === item.label ? "rotate-180" : ""}`} />
                     </button>
                     <div
-                      className={`overflow-hidden transition-all duration-300 ${
-                        mobileExpanded === item.label ? "max-h-[1000px]" : "max-h-0"
-                      }`}
+                      className={`overflow-hidden transition-all duration-300 ${mobileExpanded === item.label ? "max-h-[1000px]" : "max-h-0"
+                        }`}
                     >
                       <div className="bg-[#24145a] rounded-lg mb-2">
                         {item.children.map((child, idx) => {
                           // Check if child is a nested object with children
                           const isNestedItem = typeof child === 'object' && 'children' in child;
-                          
+
                           if (isNestedItem) {
                             return (
                               <div key={idx}>
@@ -312,22 +309,21 @@ export default function Navbar() {
                                   {child.label}
                                   <ChevronDown className={`w-4 h-4 transition-transform ${mobileNestedExpanded === child.label ? "rotate-180" : ""}`} />
                                 </button>
-                                
+
                                 {/* Nested Mobile Menu */}
                                 <div
-                                  className={`overflow-hidden transition-all duration-300 ${
-                                    mobileNestedExpanded === child.label ? "max-h-96" : "max-h-0"
-                                  }`}
+                                  className={`overflow-hidden transition-all duration-300 ${mobileNestedExpanded === child.label ? "max-h-96" : "max-h-0"
+                                    }`}
                                 >
                                   <div className="bg-[#1a0f42] ml-3 rounded-lg">
                                     {child.children.map((subChild, subIdx) => (
-                                      <a
+                                      <Link
                                         key={subIdx}
                                         href={subChild.href}
                                         className="block px-5 py-2.5 text-xs text-gray-400 hover:text-white hover:bg-white/5 first:rounded-t-lg last:rounded-b-lg"
                                       >
                                         {subChild.label}
-                                      </a>
+                                      </Link>
                                     ))}
                                   </div>
                                 </div>
@@ -335,13 +331,13 @@ export default function Navbar() {
                             );
                           } else {
                             return (
-                              <a
+                              <Link
                                 key={idx}
                                 href={child.href}
                                 className="block px-5 py-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 first:rounded-t-lg last:rounded-b-lg"
                               >
                                 {child.label}
-                              </a>
+                              </Link>
                             );
                           }
                         })}
@@ -372,26 +368,13 @@ export default function Navbar() {
 
 function ChevronDown({ className }: { className?: string }) {
   return (
-    <svg 
-      className={className} 
-      fill="none" 
-      stroke="currentColor" 
+    <svg
+      className={className}
+      fill="none"
+      stroke="currentColor"
       viewBox="0 0 24 24"
     >
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-    </svg>
-  );
-}
-
-function ChevronRight({ className }: { className?: string }) {
-  return (
-    <svg 
-      className={className} 
-      fill="none" 
-      stroke="currentColor" 
-      viewBox="0 0 24 24"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
     </svg>
   );
 }
