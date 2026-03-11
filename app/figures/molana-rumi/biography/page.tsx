@@ -20,7 +20,7 @@ interface TimelineSection {
 
 const timelineSections: TimelineSection[] = [
     {
-        title: '1. Early Life and Migration',
+        title: 'Early Life and Migration',
         events: [
             { year: '1207', description: 'Maulana Jalaluddin Rumi was born on September 30 in Balkh (modern-day Afghanistan) to Sultan-ul-Ulema Bahauddin Walad and Mumina Khatun.', image: '/allama-bio-pics/1877 - Iqbal Manzil.png' },
             { year: '1213', description: 'At the age of six, Jalaluddin Rumi and his family left Balkh due to the rising threat of Mongol invasions in Central Asia. (Balkh was eventually destroyed by the Mongols in 1221).', image: '/allama-bio-pics/1877 - Iqbal Manzil.png' },
@@ -29,7 +29,7 @@ const timelineSections: TimelineSection[] = [
         ],
     },
     {
-        title: '2. Settling in Anatolia',
+        title: 'Settling in Anatolia',
         events: [
             { year: '1217', description: 'After the pilgrimage, the family settled briefly in Malatya. Later on, they moved to Akşehir (Philomelium) at the invitation of Governor Malik Fakhruddin, staying there for several years.', image: '/allama-bio-pics/1877 - Iqbal Manzil.png' },
             { year: '1221', description: 'After the death of Malik Fakhruddin, Bahauddin Walad moved the family to Larenda (modern-day Karaman), where they lived for seven years.', image: '/allama-bio-pics/1877 - Iqbal Manzil.png' },
@@ -40,7 +40,7 @@ const timelineSections: TimelineSection[] = [
         ],
     },
     {
-        title: '3. An Educational Journey',
+        title: 'An Educational Journey',
         events: [
             { year: '1232', description: "Sayyid Burhanuddin Tirmidhi, a disciple of Maulana Rumi's father, arrived in Konya to take over Maulana Rumi's spiritual education.", image: '/allama-bio-pics/1877 - Iqbal Manzil.png' },
             { year: '1233', description: 'Maulana Rumi traveled to Aleppo to study at Madrasa al-Halawiyya, staying for one year.', image: '/allama-bio-pics/1877 - Iqbal Manzil.png' },
@@ -50,7 +50,7 @@ const timelineSections: TimelineSection[] = [
         ],
     },
     {
-        title: '4. The Spiritual Journey',
+        title: 'The Spiritual Journey',
         events: [
             { year: '1244', description: 'In December, Maulana Rumi met the dervish Shams-i-Tabriz, a meeting that transformed his whole spiritual world and whole life.', image: '/allama-bio-pics/1877 - Iqbal Manzil.png' },
             { year: '1246', description: 'Shams-i-Tabriz disappeared for the first time in February but returned a few months later.', image: '/allama-bio-pics/1877 - Iqbal Manzil.png' },
@@ -129,7 +129,7 @@ export default function Biography() {
             {/* Hero Section */}
             <div className="relative">
                 <Image
-                    src="/iqbal-bio-heroSection.jpeg"
+                    src="/Iqbal-bio-heroSection.jpeg"
                     alt="Molana Rumi"
                     width={2000}
                     height={1000}
@@ -155,7 +155,7 @@ export default function Biography() {
                 {/* Timeline */}
                 <div className="max-w-3xl mx-auto relative">
                     {/* Vertical line */}
-                    <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-red-500 md:-translate-x-1/2" />
+                    <div className="absolute left-6 md:left-1/2 top-10 sm:top-6 bottom-0 w-0.5 bg-red-500 md:-translate-x-1/2" />
 
                     {renderItems.map((item, idx) => {
                         if (item.kind === 'section') {
@@ -181,7 +181,7 @@ export default function Biography() {
                                     } flex-row`}
                             >
                                 {/* Dot */}
-                                <div className="absolute left-4 top-6 md:left-1/2 md:-translate-x-1/2 flex-shrink-0 w-5 h-5 rounded-full bg-red-400 border-4 border-red-900 z-10" />
+                                <div className="absolute left-4 top-30 md:left-1/2 md:-translate-x-1/2 flex-shrink-0 w-5 h-5 rounded-full bg-red-400 border-4 border-red-900 z-10" />
 
                                 {/* Card */}
                                 <div
@@ -229,22 +229,34 @@ export default function Biography() {
                             </div>
                         );
                     })}
-                </div>
-                <div className={`flex flex-col justify-center items-center ${nastaleeq.className}`}>
-                    <div className='py-10'>
-                        {coupletsInPersian.map((couplet, index) => (
-                            <div key={index}>
-                                <p className="text-center text-2xl font-bold">
-                                    {couplet.persian}
-                                </p>
-                                <p className="text-center text-xl">
-                                    {coupletsInUrdu[index].urdu}
-                                </p>
-                                <p className="text-center text-xl">
-                                    {coupletsInEnglish[index].english.toUpperCase()}
-                                </p>
+
+                    {/* Couplets */}
+                    <div className="pb-12 pt-0 w-full px-4">
+                        <div
+                            className="relative overflow-hidden rounded-2xl shadow-xl border border-red-700 p-8 text-center"
+                            style={{
+                                backgroundImage: "url('/islamic-geometric-pattern.jpeg')",
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                            }}
+                        >
+                            <div className="absolute inset-0 bg-white/80 backdrop-blur-[1px]" />
+                            <div className={`relative ${nastaleeq.className}`}>
+                                {coupletsInPersian.map((couplet, index) => (
+                                    <div key={index}>
+                                        <p className="text-black text-xl md:text-2xl font-bold leading-relaxed" style={{ fontFamily: "Times New Roman, Times, serif" }}>
+                                            {couplet.persian}
+                                        </p>
+                                        <p className="text-black text-lg md:text-xl leading-relaxed mt-1" style={{ fontFamily: "Times New Roman, Times, serif" }}>
+                                            {coupletsInUrdu[index].urdu}
+                                        </p>
+                                        <p className="text-black font-bold tracking-widest mt-1 text-sm uppercase" style={{ fontFamily: "Times New Roman, Times, serif" }}>
+                                            {coupletsInEnglish[index].english}
+                                        </p>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+                        </div>
                     </div>
                 </div>
             </div>
