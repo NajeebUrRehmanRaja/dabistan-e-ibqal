@@ -4,12 +4,12 @@ import Link from "next/link";
 
 export default function AllamaIqbalPage() {
   const sections = [
-    { title: "Biography", href: "/personalities/allama-iqbal/biography" },
-    { title: "PDF Downloads", href: "/personalities/allama-iqbal/pdf" },
-    { title: "Quotes from Biography", href: "/personalities/allama-iqbal/quotes" },
-    { title: "Gallery", href: "/personalities/allama-iqbal/gallery" },
-    { title: "Kalam e Iqbal (Performative)", href: "/personalities/allama-iqbal/kalam/performative" },
-    { title: "Kalam e Iqbal (Recitation)", href: "/personalities/allama-iqbal/kalam/recitation" },
+    { title: "Biography", href: "/figures/allama-iqbal/biography" },
+    { title: "PDF Downloads", href: "/figures/allama-iqbal/pdf" },
+    { title: "Quotes from Biography", href: "/figures/allama-iqbal/quotes" },
+    { title: "Gallery", href: "/figures/allama-iqbal/gallery" },
+    { title: "Kalam e Iqbal (Performative)", href: "/figures/allama-iqbal/kalam/performative" },
+    { title: "Kalam e Iqbal (Recitation)", href: "/figures/allama-iqbal/kalam/recitation" },
   ];
 
   return (
@@ -17,7 +17,7 @@ export default function AllamaIqbalPage() {
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
-      
+
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         {/* Header */}
         <div className="text-center mb-12 space-y-3">
