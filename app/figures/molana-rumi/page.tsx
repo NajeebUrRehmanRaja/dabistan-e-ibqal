@@ -3,11 +3,11 @@
 import Link from "next/link";
 
 const sections = [
-    { title: "Biography", href: "/personalities/molana-rumi/biography" },
-    { title: "PDF Downloads", href: "/personalities/molana-rumi/pdfs" },
-    { title: "Quotes", href: "/personalities/molana-rumi/quotes" },
-    { title: "Kalam e Rumi (Performative)", href: "/personalities/molana-rumi/kalam/performative" },
-    { title: "Kalam e Rumi (Recitation)", href: "/personalities/molana-rumi/kalam/recitation" },
+    { title: "Biography", href: "/figures/molana-rumi/biography" },
+    { title: "PDF Downloads", href: "/figures/molana-rumi/pdfs" },
+    { title: "Quotes", href: "/figures/molana-rumi/quotes" },
+    { title: "Kalam e Rumi (Performative)", href: "/figures/molana-rumi/kalam/performative" },
+    { title: "Kalam e Rumi (Recitation)", href: "/figures/molana-rumi/kalam/recitation" },
 ];
 
 export default function MolanaRumiPage() {
