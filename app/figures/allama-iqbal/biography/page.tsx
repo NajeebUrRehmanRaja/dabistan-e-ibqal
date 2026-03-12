@@ -22,7 +22,7 @@ const timelineEvents: TimelineEvent[] = [
   { year: '1907', description: "Iqbal left for Germany to pursue PhD at University of Munich.", image: '/allama-bio-pics/1907 - University of Munich.jpg' },
   { year: '1908', description: "Iqbal joined All India Muslim League (London Branch) and came back to Lahore.", image: '/allama-bio-pics/1908 - All India Muslim League.jpg' },
   { year: '1909', description: "Iqbal elected as a General Secretary of Anjuman-e-Himayat-e-Islam.", image: '/allama-bio-pics/1909 - General Secretary.jpg' },
-  { year: '1910', description: "Iqbal's marriage to Sardar Begum but delayed consummation.", image: '/allama-bio-pics/1910 - Sardar Begum.jpg' },
+  { year: '1910', description: "Iqbal's marriage to Sardar Begum but delayed consummation.", image: '/allama-bio-pics/1910 - Sardar Begum.png' },
   { year: '1913', description: "Iqbal's marriage to Mukhtar Begum and consummation of Sardar Begum.", image: '/allama-bio-pics/1913 - Mukhtar Begum.jpg' },
   { year: '1914', description: "Iqbal's mother, Imam Bibi passed away.", image: '/allama-bio-pics/1914 - Imam Bibi.jpg' },
   { year: '1915', description: "Iqbal's main thought Asrar-e-Khudi had published in Persian.", image: '/allama-bio-pics/1915 - Asrar-e-Khudi.jpg' },
@@ -141,14 +141,14 @@ export default function Biography() {
           {/* <h1 className="text-4xl md:text-5xl font-extrabold text-black tracking-tight">
             Allama Iqbal
           </h1> */}
-          <h1 className="text-4xl md:text-5xl font-extrabold text-black tracking-tight">Biography Timeline</h1>
+          <h1 className="text-2xl md:text-5xl font-extrabold text-black tracking-tight">Biography Timeline</h1>
           <div className="h-1 w-24 bg-red-600 mx-auto mt-4 rounded-full" />
         </div>
 
         {/* Timeline + Couplets wrapper — vertical line spans both */}
         <div className="max-w-3xl mx-auto relative">
           {/* Vertical line */}
-          <div className="absolute left-6 md:left-1/2 top-30 bottom-0 w-0.5 bg-red-500 md:-translate-x-1/2" />
+          <div className="absolute left-6 md:left-1/2 top-30 mt-4 mb-4 bottom-0 w-0.5 bg-red-500 md:-translate-x-1/2" />
 
           {/* Timeline events */}
           <div className="relative">
@@ -158,11 +158,11 @@ export default function Biography() {
               return (
                 <div
                   key={event.year}
-                  className={`relative flex items-start mb-10 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
+                  className={`relative mb-10 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
                     } flex-row`}
                 >
                   {/* Mobile: dot on the left; Desktop: dot in center */}
-                  <div className="absolute left-4 top-30 md:left-1/2 md:-translate-x-1/2 flex-shrink-0 w-5 h-5 rounded-full bg-red-400 border-4 border-red-900 z-10 " />
+                  <div className="absolute left-4 top-30 mt-4 md:left-1/2 md:-translate-x-1/2 flex-shrink-0 w-5 h-5 rounded-full bg-red-400 border-4 border-red-900 z-10 " />
 
                   {/* Card */}
                   <div
@@ -170,7 +170,7 @@ export default function Biography() {
                       }`}
                   >
                     <div
-                      className="relative overflow-hidden shadow-xl border-2 border-red-700 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-red-900/60"
+                      className="relative overflow-hidden shadow-xl border-2 border-red-700 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-red-900/60 w-80"
                       style={{
                         backgroundImage: "url('/islamic-geometric-pattern.jpeg')",
                         backgroundSize: 'cover',
@@ -181,7 +181,7 @@ export default function Biography() {
                       <div className="absolute inset-0 bg-red-950/80" />
 
                       {/* Card content — vertical column layout */}
-                      <div className="relative flex flex-col items-center p-4 gap-3">
+                      <div className="relative flex flex-col items-center px-2 py-3">
                         {/* Portrait image — fixed height */}
                         <div className="relative overflow-hidden flex-shrink-0">
                           {event.image && (
@@ -194,17 +194,18 @@ export default function Biography() {
                               className="object-cover object-top rounded-xl"
                             />
                           )}
+                          <div className="flex flex-col gap-2">
+                            {/* Year */}
+                            <span className="text-red-300 font-extrabold text-xl self-start">
+                              {event.year}
+                            </span>
+
+                            {/* Description */}
+                            <p className="text-white text-sm leading-relaxed w-full">
+                              {event.description}
+                            </p>
+                          </div>
                         </div>
-
-                        {/* Year */}
-                        <span className="text-red-300 font-extrabold text-xl tracking-widest self-start">
-                          {event.year}
-                        </span>
-
-                        {/* Description */}
-                        <p className="text-white text-sm leading-relaxed w-full">
-                          {event.description}
-                        </p>
                       </div>
                     </div>
                   </div>
