@@ -116,16 +116,16 @@ export default function Biography() {
             <div className="min-h-screen py-10">
                 {/* Header */}
                 <div className="max-w-4xl mx-auto text-center mb-14 px-4">
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-black tracking-tight">
+                    <h1 className="text-2xl md:text-5xl font-extrabold text-black tracking-tight">
                         Biography Timeline
                     </h1>
                     <div className="h-1 w-24 bg-red-600 mx-auto mt-4 rounded-full" />
                 </div>
 
                 {/* Timeline + Quote wrapper — vertical line spans both */}
-                <div className="max-w-3xl mx-auto relative px-4">
+                <div className="max-w-3xl mx-auto relative">
                     {/* Vertical line */}
-                    <div className="absolute left-6 md:left-1/2 top-10 sm:top-6 bottom-0 w-0.5 bg-red-500 md:-translate-x-1/2" />
+                    <div className="absolute left-6 md:left-1/2 top-10 mb-4 bottom-0 w-0.5 bg-red-500 md:-translate-x-1/2" />
 
                     {/* Timeline events */}
                     <div className="relative">
@@ -137,7 +137,7 @@ export default function Biography() {
                                         key={`section-${idx}`}
                                         className="relative flex justify-center py-6"
                                     >
-                                        <span className="bg-red-800 text-white px-3 py-1 rounded-full text-lg font-bold z-10 shadow-lg whitespace-nowrap text-center">
+                                        <span className="bg-red-800 text-white px-2 py-1 rounded-full text-lg font-bold z-10 shadow-lg whitespace-nowrap text-center">
                                             {item.title}
                                         </span>
                                     </div>
@@ -154,7 +154,7 @@ export default function Biography() {
                                         } flex-row`}
                                 >
                                     {/* Dot */}
-                                    <div className="absolute left-0 sm:left-4 top-30 md:left-1/2 md:-translate-x-1/2 flex-shrink-0 w-5 h-5 rounded-full bg-red-400 border-4 border-red-900 z-10" />
+                                    <div className="absolute left-4 sm:left-4 top-30 md:left-1/2 md:-translate-x-1/2 flex-shrink-0 w-5 h-5 rounded-full bg-red-400 border-4 border-red-900 z-10" />
 
                                     {/* Card */}
                                     <div
@@ -162,7 +162,7 @@ export default function Biography() {
                                             }`}
                                     >
                                         <div
-                                            className="relative overflow-hidden shadow-xl border-2 border-red-700 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-red-900/60"
+                                            className="relative overflow-hidden shadow-xl border-2 border-red-700 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-red-900/60 w-80"
                                             style={{
                                                 backgroundImage: "url('/islamic-geometric-pattern.jpeg')",
                                                 backgroundSize: 'cover',
@@ -173,7 +173,7 @@ export default function Biography() {
                                             <div className="absolute inset-0 bg-red-950/80" />
 
                                             {/* Card content */}
-                                            <div className="relative flex flex-col p-5 gap-2">
+                                            <div className="relative flex flex-col items-center px-2 py-3">
                                                 {/* Portrait image */}
                                                 <div className="relative overflow-hidden flex-shrink-0">
                                                     {item.image && (
@@ -186,16 +186,18 @@ export default function Biography() {
                                                             className="object-cover object-top rounded-xl"
                                                         />
                                                     )}
-                                                </div>
-                                                {/* Year */}
-                                                <span className="text-red-300 font-extrabold text-xl tracking-widest">
-                                                    {item.year}
-                                                </span>
+                                                    <div className="flex flex-col gap-2">
+                                                        {/* Year */}
+                                                        <span className="text-red-300 font-extrabold text-xl self-start">
+                                                            {item.year}
+                                                        </span>
 
-                                                {/* Description */}
-                                                <p className="text-white text-sm leading-relaxed">
-                                                    {item.description}
-                                                </p>
+                                                        {/* Description */}
+                                                        <p className="text-white text-sm leading-relaxed w-full">
+                                                            {item.description}
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -205,7 +207,7 @@ export default function Biography() {
                     </div>
 
                     {/* Quote */}
-                    <div className="pb-12 pt-0">
+                    <div className="pb-12 pt-0 px-4">
                         <div
                             className="relative overflow-hidden rounded-2xl shadow-xl border border-red-700 p-8 text-center"
                             style={{

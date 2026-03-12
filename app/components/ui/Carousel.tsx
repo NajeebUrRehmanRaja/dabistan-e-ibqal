@@ -1,26 +1,35 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, 
-    // Pagination, 
-    Autoplay } from "swiper/modules";
+import {
+  // Navigation, 
+  // Pagination, 
+  Autoplay,
+  EffectFade
+} from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
+// import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 // import "swiper/css/pagination";
 import Image from "next/image";
 
 export default function Carousel() {
   return (
     <Swiper
-      modules={[Navigation,
+      modules={[
+        // Navigation,
+        EffectFade,
         //  Pagination,
-         Autoplay]}
+        Autoplay]}
+      effect="fade"
       slidesPerView={1}
       spaceBetween={20}
       loop
       autoplay={{ delay: 3000 }}
-    //   pagination={{ clickable: true }}
-      navigation
+      speed={2000}
+      // fadeEffect={{ crossFade: true }}
+      //   pagination={{ clickable: true }}
+      // navigation
       className="w-full h-[300px] sm:h-[550px]"
     >
       <SwiperSlide>
@@ -28,7 +37,7 @@ export default function Carousel() {
           src="/banner_bg.jpg"
           alt="Slide 1"
           fill
-          // className="w-full h-full"
+        // className="w-full h-full"
         />
       </SwiperSlide>
 
@@ -37,7 +46,7 @@ export default function Carousel() {
           src="/banner_1.jpg"
           alt="Slide 2"
           fill
-          // className="w-full h-full"
+        // className="w-full h-full"
         />
       </SwiperSlide>
       <SwiperSlide>
@@ -45,7 +54,7 @@ export default function Carousel() {
           src="/banner_2.jpg"
           alt="Slide 2"
           fill
-          // className="w-full h-full"
+        // className="w-full h-full"
         />
       </SwiperSlide>
       <SwiperSlide>
@@ -53,7 +62,7 @@ export default function Carousel() {
           src="/banner_3.jpg"
           alt="Slide 2"
           fill
-          // className="w-full h-full"
+        // className="w-full h-full"
         />
       </SwiperSlide>
       <SwiperSlide>
@@ -61,7 +70,7 @@ export default function Carousel() {
           src="/tomb_iqbal.jpg"
           alt="Slide 2"
           fill
-          // className="w-full h-full"
+        // className="w-full h-full"
         />
       </SwiperSlide>
     </Swiper>
