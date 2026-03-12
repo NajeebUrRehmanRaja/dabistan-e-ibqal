@@ -155,7 +155,7 @@ export default function Biography() {
                 {/* Timeline */}
                 <div className="max-w-3xl mx-auto relative">
                     {/* Vertical line */}
-                    <div className="absolute left-6 md:left-1/2 top-10 sm:top-6 bottom-0 w-0.5 bg-red-500 md:-translate-x-1/2" />
+                    <div className="absolute left-6 md:left-1/2 top-30 mb-10 sm:top-6 bottom-0 w-0.5 bg-red-500 md:-translate-x-1/2" />
 
                     {renderItems.map((item, idx) => {
                         if (item.kind === 'section') {
@@ -189,7 +189,7 @@ export default function Biography() {
                                         }`}
                                 >
                                     <div
-                                        className="relative overflow-hidden shadow-xl border-2 border-red-700 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-red-900/60"
+                                        className="relative overflow-hidden shadow-xl border-2 border-red-700 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-red-900/60 w-80"
                                         style={{
                                             backgroundImage: "url('/islamic-geometric-pattern.jpeg')",
                                             backgroundSize: 'cover',
