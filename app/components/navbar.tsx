@@ -26,13 +26,12 @@ type NavItemWithChildren = {
 
 const navItems: NavItem[] = [
   {
-    label: "Dabistan",
+    label: "About",
     children: [
-      { label: "Introduction", href: "/dabistan/introduction" },
-      { label: "History", href: "/dabistan/history" },
-      { label: "Vision Statement", href: "/dabistan/vision" },
-      { label: "Mission Statement", href: "/dabistan/mission" },
-      { label: "Objectives", href: "/dabistan/objectives" },
+      { label: "History", href: "/about/history" },
+      { label: "Vision Statement", href: "/about/vision" },
+      { label: "Mission Statement", href: "/about/mission" },
+      { label: "Objectives", href: "/about/objectives" },
     ],
   },
   {

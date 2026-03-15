@@ -6,9 +6,8 @@ import Carousel from "./ui/Carousel";
 import CoreValues from "../../app/components/coreValues";
 import Speakers from "../../app/components/speakers";
 import WeeklySessions from "../../app/components/weeklySessions";
-// import BooksOnIqbal from "../../app/components/booksOnIqbal";
 import BlogsSection from "../../app/components/blogsSection";
-import BooksOfIqbal from "../../app/components/booksOfIqbal";
+import BooksSection from "../../app/components/booksSection";
 // const lines = [
 //   "کی محمد سے وفا تو نے تو ہم تیرے ہیں",
 //   "یہ جہاں چیز ہے کیا، لوح و قلم تیرے ہیں",
@@ -57,9 +56,8 @@ export default function HeroSection() {
         <CoreValues/>
         <WeeklySessions/>
         <Speakers/>
-        {/* <BooksOnIqbal/> */}
         <BlogsSection/>
-        <BooksOfIqbal/>
+        <BooksSection/>
       </div>
     </ErrorBoundary>
   );
