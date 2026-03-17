@@ -1,18 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Dabistan e Iqbal",
@@ -40,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} bg-white`}>
-      <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} bg-white min-h-screen`}>
+    <html lang="en" suppressHydrationWarning className="bg-white">
+      <body suppressHydrationWarning className="bg-white min-h-screen">
         <Navbar />
         {children}
         <Footer />
