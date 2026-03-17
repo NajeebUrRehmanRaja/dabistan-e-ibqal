@@ -129,7 +129,7 @@ export default function Biography() {
             {/* Hero Section */}
             <div className="relative">
                 <Image
-                    src="/Iqbal-bio-heroSection.jpeg"
+                    src="/Rumi-bio-heroSection.jpeg"
                     alt="Molana Rumi"
                     width={2000}
                     height={1000}
