@@ -97,7 +97,7 @@ export default function Biography() {
             {/* Hero Section */}
             <div className="relative">
                 <Image
-                    src="/Iqbal-bio-heroSection.jpeg"
+                    src="/Jinnah-bio-heroSection.jpeg"
                     alt="Quaid-e-Azam Mohammad Ali Jinnah"
                     width={2000}
                     height={1000}
@@ -105,7 +105,7 @@ export default function Biography() {
                     priority
                 />
                 <h1
-                    className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide drop-shadow-lg text-center whitespace-nowrap ${nastaleeq.className}`}
+                    className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide drop-shadow-lg text-center whitespace-nowrap ${nastaleeq.className}`}
                     dir="rtl"
                 >
                     قائدِ اعظمؒ

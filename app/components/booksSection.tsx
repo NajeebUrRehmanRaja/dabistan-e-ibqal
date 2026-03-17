@@ -143,6 +143,15 @@ const booksOf: BookOfIqbal[] = [
     category: "English Books",
     description: "Published in 1934, The Collection of Iqbal's Seven Lectures on Religion.",
   },
+  {
+    title: "Stary Reflections",
+    titleUrdu: "منتشر خیالات",
+    logo: "/books-logo/Stray Reflections.png",
+    pdfPath: "/document/Books PDF/stary reflections.pdf",
+    gradient: "from-yellow-900 to-amber-700",
+    category: "English Books",
+    description: "Published in 1961, Iqbal's personal diary where he penned down his thoughts till 1910.",
+  },
 ];
 
 const booksOn: BookOnIqbal[] = [
@@ -192,31 +201,38 @@ async function handleDownload(pdfPath: string, fileName: string) {
 // ─── Shared Components ────────────────────────────────────────────────────────
 
 function CategoryCard({ title, books, accent }: { title: string; books: BookOfIqbal[]; accent: string }) {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => setIsOpen(!isOpen);
+  const openDropdown = () => setIsOpen(true);
+  // const closeDropdown = () => setIsOpen(true);
 
   return (
     <div
       className={`group relative bg-gradient-to-br ${accent} rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 mb-6 border border-white/10`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={openDropdown}
+    // onMouseLeave={closeDropdown}
     >
       <div className="absolute top-0 right-0 -mt-6 -mr-6 w-24 h-24 bg-white opacity-10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500 pointer-events-none" />
 
-      <div className="px-6 py-5 flex items-center justify-between cursor-pointer">
+      <div
+        className="px-6 py-5 flex items-center justify-between cursor-pointer"
+        onClick={toggleDropdown}
+      >
         <h3 className="text-white font-bold text-xl tracking-wide">{title}</h3>
         <div className="flex items-center gap-3">
           <span className="text-white/70 text-sm font-medium bg-white/10 px-3 py-1 rounded-full">
             {books.length} Books
           </span>
           <ChevronDown
-            className={`text-white/70 transition-transform duration-300 ${isHovered ? "rotate-180" : "rotate-0"}`}
+            className={`text-white/70 transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
             size={20}
           />
         </div>
       </div>
 
       <div
-        className={`overflow-hidden transition-all duration-500 ease-in-out pb-2 ${isHovered ? 'max-h-[800px] opacity-100 pb-6' : 'max-h-0 opacity-0'}`}
+        className={`overflow-hidden transition-all duration-500 ease-in-out pb-2 ${isOpen ? 'max-h-[800px] opacity-100 pb-6' : 'max-h-0 opacity-0'}`}
       >
         <div className="px-4 flex flex-col gap-3">
           {books.map((book) => (
@@ -225,12 +241,15 @@ function CategoryCard({ title, books, accent }: { title: string; books: BookOfIq
                 <Image src={book.logo} alt={book.title} fill className="object-contain" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-white text-sm sm:py-0.5 py-1 font-bold leading-tight truncate">{book.title}</p>
-                <p className={`text-white text-md sm:py-1 py-0.5 truncate ${nastaleeq.className}`}>{book.titleUrdu}</p>
-                <p className="text-white text-xs sm:py-1 py-0.5 truncate">{book.description}</p>
+                <p className="text-white text-sm sm:py-0.5 py-1 font-bold leading-tight">{book.title}</p>
+                <p className={`text-white text-md sm:py-1 py-0.5 ${nastaleeq.className}`}>{book.titleUrdu}</p>
+                <p className="text-white text-xs sm:py-1 py-0.5">{book.description}</p>
               </div>
               <button
-                onClick={() => handleDownload(book.pdfPath, book.title)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleDownload(book.pdfPath, book.title);
+                }}
                 className="p-2 rounded-full bg-white/10 hover:bg-white/30 text-white transition-colors"
                 title="Download PDF"
               >
