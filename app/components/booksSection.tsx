@@ -232,7 +232,7 @@ function CategoryCard({ title, books, accent }: { title: string; books: BookOfIq
       </div>
 
       <div
-        className={`overflow-hidden transition-all duration-500 ease-in-out pb-2 ${isOpen ? 'max-h-[800px] opacity-100 pb-6' : 'max-h-0 opacity-0'}`}
+        className={`transition-all duration-500 ease-in-out pb-2 ${isOpen ? 'max-h-[500px] md:max-h-[800px] opacity-100 pb-6 overflow-y-auto' : 'max-h-0 opacity-0 overflow-hidden'}`}
       >
         <div className="px-4 flex flex-col gap-3">
           {books.map((book) => (
