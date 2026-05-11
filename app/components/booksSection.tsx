@@ -194,7 +194,14 @@ async function handleDownload(pdfPath: string, fileName: string) {
       window.URL.revokeObjectURL(url);
     }, 100);
   } catch {
-    window.open(pdfPath, "_blank");
+    // If fetch/blob fails, attempt a simple download or open in the same window
+    const link = document.createElement("a");
+    link.href = pdfPath;
+    link.download = `${fileName}.pdf`;
+    link.target = "_self";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 }
 
@@ -236,7 +243,10 @@ function CategoryCard({ title, books, accent }: { title: string; books: BookOfIq
       >
         <div className="px-4 flex flex-col gap-3">
           {books.map((book) => (
-            <div key={book.title} className="flex items-center gap-4 px-3 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-all group/book">
+            <div key={book.title} className="flex items-center gap-4 px-3 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-all group/book" onClick={(e) => {
+              e.stopPropagation();
+              handleDownload(book.pdfPath, book.title);
+            }}>
               <div className="relative sm:w-20 sm:h-20 w-16 h-16 flex-shrink-0">
                 <Image src={book.logo} alt={book.title} fill className="object-contain" />
               </div>
@@ -246,10 +256,6 @@ function CategoryCard({ title, books, accent }: { title: string; books: BookOfIq
                 <p className="text-white text-xs sm:py-1 py-0.5">{book.description}</p>
               </div>
               <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleDownload(book.pdfPath, book.title);
-                }}
                 className="p-2 rounded-full bg-white/10 hover:bg-white/30 text-white transition-colors"
                 title="Download PDF"
               >
