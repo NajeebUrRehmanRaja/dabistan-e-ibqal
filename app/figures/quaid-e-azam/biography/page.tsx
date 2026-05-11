@@ -113,7 +113,7 @@ export default function Biography() {
             </div>
 
             {/* Body */}
-            <div className="min-h-screen py-10">
+            <div className="min-h-screen py-10" style={{ background: 'linear-gradient(to right, #FEFEFC, #FEFAF7)' }}>
                 {/* Header */}
                 <div className="max-w-4xl mx-auto text-center mb-14 px-4">
                     <h1 className="text-2xl md:text-5xl font-extrabold text-black tracking-tight">
