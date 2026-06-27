@@ -19,8 +19,10 @@ interface BookOfIqbal {
 
 interface BookOnIqbal {
   title: string;
+  author: string;
   category: string;
   gradient: string;
+  pdfPath?: string;
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -147,7 +149,7 @@ const booksOf: BookOfIqbal[] = [
     title: "Stary Reflections",
     titleUrdu: "منتشر خیالات",
     logo: "/books-logo/Stray Reflections.png",
-    pdfPath: "/document/Books PDF/stary reflections.pdf",
+    pdfPath: "/document/Books PDF/Stray Reflection.pdf",
     gradient: "from-yellow-900 to-amber-700",
     category: "English Books",
     description: "Published in 1961, Iqbal's personal diary where he penned down his thoughts till 1910.",
@@ -155,24 +157,20 @@ const booksOf: BookOfIqbal[] = [
 ];
 
 const booksOn: BookOnIqbal[] = [
-  { title: "Iqbal Aur Aalmi Adab", category: "Literary Analysis", gradient: "from-pink-900 to-rose-700" },
-  { title: "Iqbal Ka Nizam-e-Fun", category: "Artistic Philosophy", gradient: "from-purple-900 to-indigo-800" },
-  { title: "Iqbal Shair Aur Falsafi", category: "Poetry & Philosophy", gradient: "from-blue-900 to-cyan-800" },
-  { title: "Iqbal Ki Urdu Nasar", category: "Urdu Prose", gradient: "from-emerald-900 to-teal-700" },
-  { title: "Iqbal ki Farsi Shairi", category: "Persian Poetry", gradient: "from-amber-900 to-orange-700" },
-  { title: "Khutbat-e-Iqbal per Aik Nazar", category: "Lectures Analysis", gradient: "from-red-900 to-pink-700" },
-  { title: "Fizan-e-Iqbal", category: "Spiritual Essence", gradient: "from-violet-900 to-purple-700" },
-  { title: "Iqbal Kay Hazoor", category: "Biographical", gradient: "from-indigo-900 to-blue-700" },
-  { title: "Asfaar-e-Iqbal", category: "Travels", gradient: "from-cyan-900 to-teal-700" },
-  { title: "Aina Khan-e-Iqbal", category: "Reflections", gradient: "from-teal-900 to-emerald-700" },
-  { title: "Malfoozat", category: "Sayings & Wisdom", gradient: "from-green-900 to-lime-700" },
-  { title: "Arooj-e-Iqbal", category: "Ascension Period", gradient: "from-lime-900 to-yellow-700" },
-  { title: "Iqbal aur Quran", category: "Quranic Studies", gradient: "from-yellow-900 to-amber-700" },
-  { title: "Zinda Rud", category: "Living Stream", gradient: "from-orange-900 to-red-700" },
-  { title: "Iqbal Tashkili Doar", category: "Formative Era", gradient: "from-rose-900 to-pink-700" },
-  { title: "Iqbal Middle Era", category: "Middle Period", gradient: "from-fuchsia-900 to-purple-700" },
-  { title: "Iqbal Arooj Ka Doar", category: "Peak Period", gradient: "from-purple-900 to-violet-700" },
-  { title: "Iqbal Ikhtatami Daor", category: "Final Period", gradient: "from-indigo-900 to-indigo-700" },
+  { title: "Iqbal, Poet and Thinker", author: "Mustansir Mir", category: "Introduction of Iqbal", gradient: "from-pink-900 to-rose-700", pdfPath: "/document/Books on Iqbal PDF/Iqbal Poet and Thinker by Mustansir Mir.pdf" },
+  { title: "Tulip of the Desert", author: "Mustansir Mir", category: "Introduction to Iqbal's poetry", gradient: "from-purple-900 to-indigo-800" },
+  { title: "Thoughts of Iqbal", author: "Brig(r) Taimoor Afzal Khan", category: "Themes of Iqbal - English", gradient: "from-blue-900 to-cyan-800", pdfPath: "/document/Books on Iqbal PDF/Thoughts of Iqbal by Brig (R) Taimur Afzal Khan.pdf" },
+  { title: "Philosophy of Iqbal", author: "Dr. Atiya Syed", category: "Philosophy", gradient: "from-emerald-900 to-teal-700", },
+  { title: "The Philosophy of Iqbal", author: "Dr. Rafi uddin", category: "Philosophy", gradient: "from-amber-900 to-orange-700", pdfPath: "/document/Books on Iqbal PDF/The philosophy of IqbalL by Dr. Mohammad Rafi-ud-Din.pdf" },
+  { title: "Afkaar-e-Iqbal", author: "Dr. Javid Iqbal", category: "Themes of Iqbal - Urdu", gradient: "from-red-900 to-pink-700", pdfPath: "/document/Books on Iqbal PDF/Afkar e Iqbal by Dr. Javed Iqbal.pdf" },
+  { title: "Zinda Rood", author: "Dr. Javid Iqbal", category: "Biography of Iqbal", gradient: "from-violet-900 to-purple-700", pdfPath: "/document/Books on Iqbal PDF/Zinda Rood by Dr Javed Iqbal.pdf" },
+  { title: "Iqbal Kay Hazoor", author: "Mustansir Mir", category: "Philosophy", gradient: "from-indigo-900 to-blue-700", pdfPath: "/document/Books on Iqbal PDF/iqbal ke hzoor by sayed nazeer niyazi.pdf" },
+  { title: "Iqbal's Educational Philosophy", author: "K. G. Sayedain", category: "Philosophy", gradient: "from-cyan-900 to-teal-700", pdfPath: "/document/Books on Iqbal PDF/Iqbal's Educational Philosophy.pdf" },
+  { title: "Mulla Aur Iqbal", author: "Dr. Khalifa Abdul Hakeem", category: "Religious Theme", gradient: "from-teal-900 to-emerald-700", pdfPath: "/document/Books on Iqbal PDF/Iqbal Aur Mulla by Dr. Khalifa Abdul Hakeem.pdf" },
+  { title: "Iqbal Nayi Tashkeel", author: "Aziz Ahmad", category: "Themes of Iqbal", gradient: "from-green-900 to-lime-700", pdfPath: "/document/Books on Iqbal PDF/Iqbal Nai Tashkeel by Aziz Ahmad.pdf" },
+  { title: "Metaphysics of Iqbal", author: "Dr. Ishrat Hasan Enver", category: "Themes of Iqbal", gradient: "from-lime-900 to-yellow-700", pdfPath: "/document/Books on Iqbal PDF/Metaphysics Of Iqbal by Dr. Ishrat Hasan Enver.pdf" },
+  { title: "Fikr-e-Iqbal", author: "Dr. Khalifa Abdul Hakeem", category: "Themes of Iqbal", gradient: "from-yellow-900 to-amber-700", pdfPath: "/document/Books on Iqbal PDF/Fikr e Iqbal Khalifa Abdul Hakeem 1964.pdf" },
+  { title: "Iqbal Ka Siyasi Karnama", author: "Muhammad Ahmad Khan", category: "Politics", gradient: "from-rose-900 to-pink-700", pdfPath: "/document/Books on Iqbal PDF/Iqbal ka Siasi Karnama 1977 by Muhammad Ahmed Khan.pdf" },
 ];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -352,8 +350,21 @@ export default function BooksSection() {
                       {book.title}
                     </h3>
 
-                    <div className="mt-4 pt-3 border-t border-white/20 w-full">
+                    <h4 className="text-xs mt-2 flex-1 flex items-end">
+                      {book.author}
+                    </h4>
+
+                    <div className="mt-4 pt-3 border-t border-white/20 w-full flex items-center justify-between">
                       <div className="w-6 h-1 bg-white/50 group-hover:w-12 transition-all duration-300" />
+                      {book.pdfPath && (
+                        <button
+                          onClick={() => handleDownload(book.pdfPath!, book.title)}
+                          className="p-1.5 rounded-full bg-white/10 hover:bg-white/30 text-white transition-colors"
+                          title="Download PDF"
+                        >
+                          <Download size={13} className="cursor-pointer" />
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
