@@ -1,63 +1,82 @@
 "use client";
-// import Image from "next/image";
+
+import dynamic from "next/dynamic";
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
-// import {  useEffect, useState } from "react";
 import Carousel from "./ui/Carousel";
-import CoreValues from "../../app/components/coreValues";
-import Speakers from "../../app/components/speakers";
-import WeeklySessions from "../../app/components/weeklySessions";
-import BlogsSection from "../../app/components/blogsSection";
-import BooksSection from "../../app/components/booksSection";
-// const lines = [
-//   "کی محمد سے وفا تو نے تو ہم تیرے ہیں",
-//   "یہ جہاں چیز ہے کیا، لوح و قلم تیرے ہیں",
-//   "عقل و دل و نگاہ کا مرشد اولیں ہے عشق",
-//   "عشق نہ ہو تو شرع و دیں بت کدۂ تصورات",
-//   "خیرہ نہ کر سکا مجھے جلوہ دانش فرنگ",
-//   "سرمہ ہے میری آنکھ کا خاک مدینہ و نجف",
-//   "اپنے من میں ڈوب کر پا جا سراغ زندگی",
-//   "تو اگر میرا نہیں بنتا نہ بن، اپنا تو بن",
-//   "جوانوں کو سوز جگر بخش دے",
-//   "مرا عشق، میری نظر بخش دے",
-// ];
+import LazySection from "./ui/LazySection";
+import {
+  CoreValuesSkeleton,
+  WeeklySessionsSkeleton,
+  SpeakersSkeleton,
+  BlogsSkeleton,
+  BooksSkeleton,
+} from "./ui/skeletons";
+
+// ─── Eagerly loaded (above the fold) ─────────────────────────────────────────
+// Carousel is always the first thing users see — no lazy loading needed.
+
+// ─── Code-split + lazy loaded (below the fold) ───────────────────────────────
+// next/dynamic splits these into separate JS chunks that are only downloaded
+// when the IntersectionObserver signals the section is approaching the viewport.
+
+const CoreValues = dynamic(() => import("./coreValues"), {
+  loading: () => <CoreValuesSkeleton />,
+  ssr: false,
+});
+
+const WeeklySessions = dynamic(() => import("./weeklySessions"), {
+  loading: () => <WeeklySessionsSkeleton />,
+  ssr: false,
+});
+
+const Speakers = dynamic(() => import("./speakers"), {
+  loading: () => <SpeakersSkeleton />,
+  ssr: false,
+});
+
+const BlogsSection = dynamic(() => import("./blogsSection"), {
+  loading: () => <BlogsSkeleton />,
+  ssr: false,
+});
+
+const BooksSection = dynamic(() => import("./booksSection"), {
+  loading: () => <BooksSkeleton />,
+  ssr: false,
+});
+
+// ─── Component ────────────────────────────────────────────────────────────────
 
 export default function HeroSection() {
-//   const [lineIndex, setLineIndex] = useState(0);
-
-  // Change line every 3.5 seconds
-//   useEffect(() => {
-//     const timer = setTimeout(() => {
-//       setLineIndex((prev) => (prev + 1) % lines.length);
-//     }, 3500); // 3.5 seconds per line
-
-//     return () => clearTimeout(timer);
-//   }, [lineIndex]);
-
   return (
     <ErrorBoundary>
-      {/* <div className="relative w-full h-[500px]"> */}
       <div>
-        {/* Hero Image */}
-        {/* <Image
-          src="/banner_bg.jpg"
-          alt="Dabistan-e-Iqbal"
-          fill
-          className="object-cover"
-        /> */}
+        {/* ── Above the fold — always rendered immediately ── */}
+        <Carousel />
 
-        {/* Optional dark overlay for readability */}
-        {/* <div className="absolute inset-0 bg-black/40"></div> */}
+        {/* ── Below the fold — mounted only when scrolled near ── */}
 
-        {/* Animated Poetry Line */}
-        {/* <div className="absolute inset-0 flex items-center justify-center text-white text-3xl font-bold text-center px-4"> */}
-          {/* <p className="animate-fadeIn">{lines[lineIndex]}</p> */}
-        {/* </div> */}
-        <Carousel/>
-        <CoreValues/>
-        <WeeklySessions/>
-        <Speakers/>
-        <BlogsSection/>
-        <BooksSection/>
+        {/* rootMargin="300px" means rendering starts 300 px before the element
+            enters the visible viewport — enough time for the chunk to arrive. */}
+
+        <LazySection rootMargin="300px" fallback={<CoreValuesSkeleton />}>
+          <CoreValues />
+        </LazySection>
+
+        <LazySection rootMargin="300px" fallback={<WeeklySessionsSkeleton />}>
+          <WeeklySessions />
+        </LazySection>
+
+        <LazySection rootMargin="300px" fallback={<SpeakersSkeleton />}>
+          <Speakers />
+        </LazySection>
+
+        <LazySection rootMargin="300px" fallback={<BlogsSkeleton />}>
+          <BlogsSection />
+        </LazySection>
+
+        <LazySection rootMargin="300px" fallback={<BooksSkeleton />}>
+          <BooksSection />
+        </LazySection>
       </div>
     </ErrorBoundary>
   );

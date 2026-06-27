@@ -11,40 +11,39 @@ interface TimelineEvent {
 
 const timelineEvents: TimelineEvent[] = [
   { year: '1877', description: 'Birth of Iqbal in Sialkot on November 9th at Iqbal Manzil.', image: '/allama-bio-pics/1877 - Iqbal Manzil.png' },
-  { year: '1883', description: "Iqbal's admission to the Scotch Mission School for modern education.", image: '/allama-bio-pics/1883 - Scotch Mission School.png' },
-  { year: '1893', description: "Iqbal completed his matriculation and his first marriage to Karim Bibi.", image: '/allama-bio-pics/1893 - Karim Bibi.png' },
-  { year: '1895', description: "Iqbal completed F.A. Examination and joined Government College, Lahore to study Philosophy, English Literature and Arabic Language.", image: '/allama-bio-pics/1895 - F.A Exam.png' },
-  { year: '1897', description: "Iqbal completed B.A. in English Literature and Arabic.", image: '/allama-bio-pics/1897 B.A in English.png' },
-  { year: '1899', description: "Iqbal completed M.A. in Philosophy and joined the administration in Anjuman-e-Himayat-e-Islam.", image: '/allama-bio-pics/1899 Anjuman Himayat-i-Islam.jpeg' },
-  { year: '1900', description: "Iqbal's recognition as poet had started through his Initial Poetry.", image: '/allama-bio-pics/1900 - Recognition as poet.jpeg' },
-  { year: '1903', description: 'Iqbal\'s first book "Ilm-ul-Iqtisad" had published.', image: '/allama-bio-pics/1903 - Ilm o iqtesad.jpeg' },
-  { year: '1905', description: "Iqbal left Lahore to study Abroad and enrolled at Trinity College (Cambridge). Later on, at Lincoln's Inn for Bar at Law.", image: '/allama-bio-pics/1905 Trinity College (Cambridge).jpeg' },
-  { year: '1907', description: "Iqbal left for Germany to pursue PhD at University of Munich.", image: '/allama-bio-pics/1907 Munich.png' },
-  { year: '1908', description: "Iqbal joined All India Muslim League (London Branch) and came back to Lahore.", image: '/allama-bio-pics/1908 - All India Muslim League.jpg' },
-  { year: '1909', description: "Iqbal elected as a General Secretary of Anjuman-e-Himayat-e-Islam.", image: '/allama-bio-pics/1909 - General Secretary.jpg' },
-  { year: '1910', description: "Iqbal's marriage to Sardar Begum but delayed consummation.", image: '/allama-bio-pics/1910 - Sardar Begum.png' },
-  { year: '1913', description: "Iqbal's marriage to Mukhtar Begum and consummation of Sardar Begum.", image: '/allama-bio-pics/1913 - Mukhtar Begum.jpg' },
-  { year: '1914', description: "Iqbal's mother, Imam Bibi passed away.", image: '/allama-bio-pics/1914 - Imam Bibi.jpg' },
-  { year: '1915', description: "Iqbal's main thought Asrar-e-Khudi had published in Persian.", image: '/allama-bio-pics/1915 - Asrar-e-Khudi.jpg' },
-  { year: '1918', description: "Persian book Ramooz-e-Bekhudi had published.", image: '/allama-bio-pics/1918 - Ramooz-e-Bekhudi.jpg' },
-  { year: '1919', description: "Iqbal appointed as Dean, Oriental Faculty at the University of Punjab and elected again as a General Secretary of Anjuman-e-Himayat-e-Islam.", image: '/allama-bio-pics/1919 - Dean Oriental Faculty.jpg' },
-  { year: '1921', description: "Iqbal's first visit to Kashmir to plead a legal case.", image: '/allama-bio-pics/1921 - Kashmir Visit.jpg' },
-  { year: '1923', description: "Iqbal's Persian anthology Payam-e-Mashriq had published.", image: '/allama-bio-pics/1923 - Payam-e-Mashriq.jpg' },
-  { year: '1924', description: "Iqbal's Urdu anthology Bang-e-Dara had published and Javid Iqbal was born.", image: '/allama-bio-pics/1924 - Bang-e-Dara.jpg' },
-  { year: '1925', description: "Iqbal presented paper on Ijtehad in Islam.", image: '/allama-bio-pics/1925 - Ijtehad in Islam.jpg' },
-  { year: '1926', description: "Iqbal elected as a member of legislative assembly.", image: '/allama-bio-pics/1926 - Legislative Assembly.jpg' },
-  { year: '1927', description: "Iqbal's Persian anthology Zbur-i-Ajam had published.", image: '/allama-bio-pics/1927 - Zbur-i-Ajam.jpg' },
-  { year: '1928', description: "Iqbal visited Delhi for medical treatment.", image: '/allama-bio-pics/1928 - Medical Treatment.jpg' },
-  { year: '1929', description: "Iqbal visited Delhi to attend All India Muslim Conference and then visited Madras, Bangalore and Hyderabad, met ruling Nizam and delivered his lectures which were later published as The Reconstruction of Religious Thought in Islam.", image: '/allama-bio-pics/1929 - Muslim Conference.jpg' },
-  { year: '1930', description: "Iqbal's daughter Munira Bano was born, Iqbal's father Noor Muhammad died and Iqbal delivered his presidential address at Allahabad.", image: '/allama-bio-pics/1930 - Munira Bano.jpg' },
-  { year: '1931', description: "Iqbal visited England for 2nd round table conference and met Muhammed Ali Jinnah. Then, he visited Rome, Italy where he met deposed King of Afghanistan Ameer Amanullah, then he met Bennito Mussolini. He visited Al-Cairo, Egypt and met Muslim Scholars. Then he visited Jerusalem, Palestine for Islamic Conference.", image: '/allama-bio-pics/1931 - Round Table Conference.jpg' },
-  { year: '1932', description: "Iqbal's Persian magnum opus Javid nameh had published. He left Lahore for 3rd round table conference London and then visited Paris, France met with Henri Bergson.", image: '/allama-bio-pics/1932 - Javid Nameh.jpg' },
-  { year: '1933', description: "Iqbal arrived in Spain and visited Cordova, Granada, Seville and Madrid. Then he visited Afghanistan on the Invitation of King Nadir Shah on educational reforms along with Sir Rass Massoud and Syed Sulaiman Nadawi. He visited Kabul, Ghazna and Qandhar.", image: '/allama-bio-pics/1933 - Spain Visit.jpg' },
-  { year: '1934', description: "Iqbal visited Sirhind with son Javid Iqbal. He elected as President of Anjuman-e-Himayat-e-Islam. His Persian verses Musafir (A travelogue) had published.", image: '/allama-bio-pics/1934 - Sirhind Visit.jpg' },
-  { year: '1935', description: "Iqbal's Urdu anthology Baal-i-Jibril had published. Iqbal visited Bhopal for electrotherapy. He shifted in Javid Manzil and his wife Sardar Begum died.", image: '/allama-bio-pics/1935 - Baal-i-Jibril.jpg' },
-  { year: '1936', description: "Muhammad Ali Jinnah met Iqbal at Javid Manzil. He elected as a president of the Punjab Muslim League. His Urdu anthology Zarb-i-Kaleem and Persian anthology Pas chey bayad Kard had published.", image: '/allama-bio-pics/1936 - Zarb-i-Kaleem.jpg' },
-  { year: '1937', description: "Iqbal's Illnesses became serious.", image: '/allama-bio-pics/1937 - Illnesses became serious.jpg' },
-  { year: '1938', description: "Iqbal died in Lahore on April 21st. Later on, in November, his last work in Urdu and Persian Armughan-e-Hijaz had published.", image: '/allama-bio-pics/1938 - Armughan-e-Hijaz.jpg' },
+  { year: '1883', description: "Iqbal was admitted to the Scotch Mission School for a modern education.", image: '/allama-bio-pics/1883 - Scotch Mission School.png' },
+  { year: '1893', description: "Iqbal completed his matriculation and married Karim Bibi.", image: '/allama-bio-pics/1893 - Karim Bibi.png' },
+  { year: '1895', description: "Iqbal completed his F.A. Examination and joined Government College, Lahore, to study Philosophy, English Literature, and Arabic.", image: '/allama-bio-pics/1895 - F.A Exam.png' },
+  { year: '1897', description: "Iqbal completed his B.A. in English Literature and Arabic.", image: '/allama-bio-pics/1897 B.A in English.png' },
+  { year: '1899', description: "Iqbal completed his M.A. in Philosophy and joined the administration of Anjuman-e-Himayat-e-Islam.", image: '/allama-bio-pics/1899 Anjuman Himayat-i-Islam.jpeg' },
+  { year: '1900', description: "Iqbal gained recognition as a poet through his early works.", image: '/allama-bio-pics/1900 - Recognition as poet.jpeg' },
+  { year: '1903', description: 'Iqbal’s first book, Ilm-ul-Iqtisad, was published.', image: '/allama-bio-pics/1903 - Ilm o iqtesad.jpeg' },
+  { year: '1905', description: "Iqbal left Lahore to study abroad and enrolled at Trinity College, Cambridge. Later, he joined Lincoln's Inn to study for the Bar.", image: '/allama-bio-pics/1905 Trinity College (Cambridge).jpeg' },
+  { year: '1907', description: "Iqbal left for Germany to pursue a PhD at the University of Munich.", image: '/allama-bio-pics/1907 Munich.png' },
+  { year: '1908', description: "Iqbal joined the All India Muslim League (London Branch) and returned to Lahore.", image: '/allama-bio-pics/1908 - All India Muslim League.jpg' },
+  { year: '1909', description: "Iqbal was elected General Secretary of Anjuman-e-Himayat-e-Islam.", image: '/allama-bio-pics/1909 - General Secretary.jpg' },
+  { year: '1910', description: "Iqbal married Sardar Begum, though the marriage was not immediately consummated.", image: '/allama-bio-pics/1910 - Sardar Begum.png' },
+  { year: '1913', description: "Iqbal married Mukhtar Begum; his marriage to Sardar Begum was also consummated this year.", image: '/allama-bio-pics/1913 - Mukhtar Begum.jpg' },
+  { year: '1914', description: "Iqbal's mother, Imam Bibi, passed away.", image: '/allama-bio-pics/1914 - Imam Bibi.jpg' },
+  { year: '1915', description: "Iqbal's philosophical work, Asrar-e-Khudi, was published in Persian.", image: '/allama-bio-pics/1915 - Asrar-e-Khudi.jpg' },
+  { year: '1918', description: "The Persian book Ramooz-e-Bekhudi was published.", image: '/allama-bio-pics/1918 - Ramooz-e-Bekhudi.jpg' },
+  { year: '1919', description: "Iqbal was appointed Dean of the Oriental Faculty at the University of the Punjab and was re-elected General Secretary of Anjuman-e-Himayat-e-Islam.", image: '/allama-bio-pics/1919 - Dean Oriental Faculty.jpg' },
+  { year: '1921', description: "Iqbal visited Kashmir for the first time to plead a legal case.", image: '/allama-bio-pics/1921 - Kashmir Visit.jpg' },
+  { year: '1923', description: "Iqbal's Persian anthology, Payam-e-Mashriq, was published.", image: '/allama-bio-pics/1923 - Payam-e-Mashriq.jpg' },
+  { year: '1924', description: "Iqbal's Urdu anthology, Bang-e-Dara, was published, and his son, Javid Iqbal, was born.", image: '/allama-bio-pics/1924 - Bang-e-Dara.jpg' },
+  { year: '1925', description: "Iqbal presented a paper on Ijtihad in Islam.", image: '/allama-bio-pics/1925 - Ijtehad in Islam.jpg' },
+  { year: '1926', description: "Iqbal was elected as a member of the Legislative Assembly.", image: '/allama-bio-pics/1926 - Legislative Assembly.jpg' },
+  { year: '1927', description: "Iqbal's Persian anthology, Zabur-i-Ajam, was published.", image: '/allama-bio-pics/1927 - Zbur-i-Ajam.jpg' },
+  { year: '1929', description: "Iqbal visited Delhi for the All India Muslim Conference, then toured Madras, Bangalore, and Hyderabad. He met the Nizam and delivered lectures later published as The Reconstruction of Religious Thought in Islam.", image: '/allama-bio-pics/1929 - Muslim Conference.jpg' },
+  { year: '1930', description: "Iqbal's daughter, Munira Bano, was born. His father, Noor Muhammad, died. Iqbal delivered his historic Presidential Address at Allahabad.", image: '/allama-bio-pics/1930 - Munira Bano.jpg' },
+  { year: '1931', description: "Iqbal visited England for the 2nd Round Table Conference and met Muhammad Ali Jinnah. He then visited Rome, meeting King Amanullah and Benito Mussolini. He also traveled to Egypt to meet Muslim scholars and to Jerusalem for the Islamic Conference.", image: '/allama-bio-pics/1931 - Round Table Conference.jpg' },
+  { year: '1932', description: "Iqbal's Persian magnum opus, Javid Nama, was published. He attended the 3rd Round Table Conference in London and met Henri Bergson in Paris.", image: '/allama-bio-pics/1932 - Javid Nameh.jpg' },
+  { year: '1933', description: "Iqbal toured Spain (Cordoba, Granada, Seville, and Madrid). He then visited Afghanistan (toured Kabul, Ghazni, Qandhar) at the invitation of King Nadir Shah to discuss educational reforms, alongside Sir Ross Masood and Syed Sulaiman Nadvi.", image: '/allama-bio-pics/1933 - Spain Visit.jpg' },
+  { year: '1934', description: "Iqbal visited Sirhind with Javid Iqbal and was elected President of Anjuman-e-Himayat-e-Islam. His Persian travelogue, Musafir, was published.", image: '/allama-bio-pics/1934 - Sirhind Visit.jpg' },
+  { year: '1935', description: "Bal-i-Jibril was published. Iqbal visited Bhopal for electrotherapy, moved to Javid Manzil, and his wife, Sardar Begum, passed away.", image: '/allama-bio-pics/1935 - Baal-i-Jibril.jpg' },
+  { year: '1936', description: "Muhammad Ali Jinnah met Iqbal at Javid Manzil. Iqbal was elected President of the Punjab Muslim League. Zarb-i-Kaleem and Pas Cheh Bayad Kard were published.", image: '/allama-bio-pics/1936 - Zarb-i-Kaleem.jpg' },
+  { year: '1937', description: "Iqbal’s health declined significantly.", image: '/allama-bio-pics/1937 - Illnesses became serious.jpg' },
+  { year: '1938', description: "Iqbal died in Lahore on April 21st. In November, his final work, Armughan-e-Hijaz (in Urdu and Persian), was published posthumously.", image: '/allama-bio-pics/1938 - Armughan-e-Hijaz.jpg' },
 ];
 
 const coupletsInPersian = [
@@ -148,7 +147,7 @@ export default function Biography() {
         {/* Timeline + Couplets wrapper — vertical line spans both */}
         <div className="max-w-3xl mx-auto relative">
           {/* Vertical line */}
-          <div className="absolute left-6 md:left-1/2 top-30 mt-4 mb-4 bottom-0 w-0.5 bg-red-500 md:-translate-x-1/2" />
+          <div className="absolute left-6 md:left-1/2 top-30 mt-10 mb-10 bottom-0 w-0.5 bg-red-500 md:-translate-x-1/2 z-0 shadow-sm" />
 
           {/* Timeline events */}
           <div className="relative">
@@ -162,7 +161,7 @@ export default function Biography() {
                     } flex-row`}
                 >
                   {/* Mobile: dot on the left; Desktop: dot in center */}
-                  <div className="absolute left-4 top-30 mt-4 md:left-1/2 md:-translate-x-1/2 flex-shrink-0 w-5 h-5 rounded-full bg-red-400 border-4 border-red-900 z-10 " />
+                  <div className="absolute left-4 sm:left-4 top-30 mt-10 md:left-1/2 md:-translate-x-1/2 flex-shrink-0 w-5 h-5 rounded-full bg-red-400 border-4 border-red-900 z-10 shadow-md" />
 
                   {/* Card */}
                   <div

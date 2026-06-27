@@ -71,10 +71,10 @@ const coupletsInPersian = [
         persian: "من خاکِ درِ محمّدِ مُختارم",
     },
     {
-        persian: "گر نقل کند جُز این کس از گُفتارم",
+        persian: "گر نقل کُند جُز این کس از گُفتارم",
     },
     {
-        persian: "بیزارم از او وز این سُخن بیزارم",
+        persian: "بیزارم \u00A0 از \u00A0 او \u00A0 وز \u00A0 این \u00A0 سُخن \u00A0 بیزارم",
     },
 ];
 
@@ -143,19 +143,19 @@ export default function Biography() {
             </div>
 
             {/* Body */}
-            <div className="min-h-screen py-10">
+            <div className="min-h-screen py-10" style={{ background: 'linear-gradient(to right, #e8efe0ff, #dddbdbff, #fdeee1ff)' }}>
                 {/* Header */}
                 <div className="max-w-4xl mx-auto text-center mb-14">
                     <h1 className="text-4xl md:text-5xl font-extrabold text-black tracking-tight">
                         Biography Timeline
                     </h1>
-                    <div className="h-1 w-24 bg-red-600 mx-auto mt-4 rounded-full" />
+                    <div className="h-1 w-24 mx-auto mt-4 rounded-full" style={{ backgroundColor: 'rgba(62, 78, 42, 0.8)' }} />
                 </div>
 
                 {/* Timeline */}
                 <div className="max-w-3xl mx-auto relative">
                     {/* Vertical line */}
-                    <div className="absolute left-6 md:left-1/2 top-30 mb-10 sm:top-6 bottom-0 w-0.5 bg-red-500 md:-translate-x-1/2" />
+                    <div className="absolute left-6 md:left-1/2 top-30 mb-10 sm:top-6 bottom-0 md:-translate-x-1/2" style={{ backgroundColor: '#BB793C', width: '4px' }} />
 
                     {renderItems.map((item, idx) => {
                         if (item.kind === 'section') {
@@ -164,7 +164,7 @@ export default function Biography() {
                                     key={`section-${idx}`}
                                     className="relative flex justify-center py-6"
                                 >
-                                    <span className="bg-red-800 text-white px-6 py-2 rounded-full text-lg font-bold z-10 shadow-lg whitespace-nowrap text-center">
+                                    <span className="text-white px-6 py-2 rounded-full text-lg font-bold z-10 shadow-lg whitespace-nowrap text-center" style={{ backgroundColor: '#BB793C', }}>
                                         {item.title}
                                     </span>
                                 </div>
@@ -181,7 +181,7 @@ export default function Biography() {
                                     } flex-row`}
                             >
                                 {/* Dot */}
-                                <div className="absolute left-4 top-30 md:left-1/2 md:-translate-x-1/2 flex-shrink-0 w-5 h-5 rounded-full bg-red-400 border-4 border-red-900 z-10" />
+                                <div className="absolute left-4 top-30 md:left-1/2 md:-translate-x-1/2 flex-shrink-0 w-5 h-5 rounded-full z-10" style={{ backgroundColor: 'rgba(62, 78, 42, 1)', border: '4px solid #bf6816ff' }} />
 
                                 {/* Card */}
                                 <div
@@ -189,15 +189,16 @@ export default function Biography() {
                                         }`}
                                 >
                                     <div
-                                        className="relative overflow-hidden shadow-xl border-2 border-red-700 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-red-900/60 w-80"
+                                        className="relative overflow-hidden shadow-xl rounded-2xl transition-all duration-300 hover:scale-[1.02] w-80"
                                         style={{
                                             backgroundImage: "url('/islamic-geometric-pattern.jpeg')",
                                             backgroundSize: 'cover',
                                             backgroundPosition: 'center',
+                                            border: '3px solid #BB793C',
                                         }}
                                     >
                                         {/* Dark overlay */}
-                                        <div className="absolute inset-0 bg-red-950/80" />
+                                        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(62, 78, 42, 0.8)' }} />
 
                                         {/* Card content */}
                                         <div className="relative flex flex-col p-5 gap-2">
@@ -215,7 +216,7 @@ export default function Biography() {
                                                 )}
                                             </div>
                                             {/* Year */}
-                                            <span className="text-red-300 font-extrabold text-xl tracking-widest">
+                                            <span className="font-extrabold text-xl tracking-widest" style={{ color: '#BB793C' }}>
                                                 {item.year}
                                             </span>
 
@@ -233,7 +234,7 @@ export default function Biography() {
                     {/* Couplets */}
                     <div className="pb-12 pt-0 w-full px-4">
                         <div
-                            className="relative overflow-hidden rounded-2xl shadow-xl border border-red-700 p-8 text-center"
+                            className="relative overflow-hidden rounded-2xl shadow-xl border border-green p-8 text-center"
                             style={{
                                 backgroundImage: "url('/islamic-geometric-pattern.jpeg')",
                                 backgroundSize: 'cover',
@@ -244,13 +245,13 @@ export default function Biography() {
                             <div className={`relative ${nastaleeq.className}`}>
                                 {coupletsInPersian.map((couplet, index) => (
                                     <div key={index}>
-                                        <p className="text-black text-xl md:text-2xl font-bold leading-relaxed" style={{ fontFamily: "Times New Roman, Times, serif" }}>
+                                        <p className="text-black text-xl md:text-3xl font-bold leading-relaxed">
                                             {couplet.persian}
                                         </p>
-                                        <p className="text-black text-lg md:text-xl leading-relaxed mt-1" style={{ fontFamily: "Times New Roman, Times, serif" }}>
+                                        <p className="text-black text-lg md:text-xl leading-relaxed mt-1">
                                             {coupletsInUrdu[index].urdu}
                                         </p>
-                                        <p className="text-black font-bold tracking-widest mt-1 text-sm uppercase" style={{ fontFamily: "Times New Roman, Times, serif" }}>
+                                        <p className="text-black font-bold tracking-widest mt-1 text-sm uppercase">
                                             {coupletsInEnglish[index].english}
                                         </p>
                                     </div>
