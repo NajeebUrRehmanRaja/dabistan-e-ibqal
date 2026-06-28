@@ -146,7 +146,7 @@ const booksOf: BookOfIqbal[] = [
     description: "Published in 1934, The Collection of Iqbal's Seven Lectures on Religion.",
   },
   {
-    title: "Stary Reflections",
+    title: "Stray Reflections",
     titleUrdu: "منتشر خیالات",
     logo: "/books-logo/Stray Reflections.png",
     pdfPath: "/document/Books PDF/Stray Reflection.pdf",
@@ -164,7 +164,7 @@ const booksOn: BookOnIqbal[] = [
   { title: "The Philosophy of Iqbal", author: "Dr. Rafi uddin", category: "Philosophy", gradient: "from-amber-900 to-orange-700", pdfPath: "/document/Books on Iqbal PDF/The philosophy of IqbalL by Dr. Mohammad Rafi-ud-Din.pdf" },
   { title: "Afkaar-e-Iqbal", author: "Dr. Javid Iqbal", category: "Themes of Iqbal - Urdu", gradient: "from-red-900 to-pink-700", pdfPath: "/document/Books on Iqbal PDF/Afkar e Iqbal by Dr. Javed Iqbal.pdf" },
   { title: "Zinda Rood", author: "Dr. Javid Iqbal", category: "Biography of Iqbal", gradient: "from-violet-900 to-purple-700", pdfPath: "/document/Books on Iqbal PDF/Zinda Rood by Dr Javed Iqbal.pdf" },
-  { title: "Iqbal Kay Hazoor", author: "Mustansir Mir", category: "Philosophy", gradient: "from-indigo-900 to-blue-700", pdfPath: "/document/Books on Iqbal PDF/iqbal ke hzoor by sayed nazeer niyazi.pdf" },
+  { title: "Iqbal Kay Hazoor", author: "Sayed Nazeer Niyazi", category: "Philosophy", gradient: "from-indigo-900 to-blue-700", pdfPath: "/document/Books on Iqbal PDF/iqbal ke hzoor by sayed nazeer niyazi.pdf" },
   { title: "Iqbal's Educational Philosophy", author: "K. G. Sayedain", category: "Philosophy", gradient: "from-cyan-900 to-teal-700", pdfPath: "/document/Books on Iqbal PDF/Iqbal's Educational Philosophy.pdf" },
   { title: "Mulla Aur Iqbal", author: "Dr. Khalifa Abdul Hakeem", category: "Religious Theme", gradient: "from-teal-900 to-emerald-700", pdfPath: "/document/Books on Iqbal PDF/Iqbal Aur Mulla by Dr. Khalifa Abdul Hakeem.pdf" },
   { title: "Iqbal Nayi Tashkeel", author: "Aziz Ahmad", category: "Themes of Iqbal", gradient: "from-green-900 to-lime-700", pdfPath: "/document/Books on Iqbal PDF/Iqbal Nai Tashkeel by Aziz Ahmad.pdf" },
