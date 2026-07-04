@@ -88,12 +88,12 @@ export default function WeeklySessions() {
             {/* CTA */}
             <div className="pt-4">
               <a
-                href="https://www.facebook.com/DabistaneIqbal/"
+                href="https://linktr.ee/dabistaneiqbal"
                 target="_blank"
                 // rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-xl bg-pink-900 px-7 py-3 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-1 hover:bg-pink-800 hover:shadow-pink-900/20 sm:px-8 sm:py-4 sm:text-base"
               >
-                Visit Official Page
+                Visit Official Pages
                 <Radio size={18} className="animate-pulse" />
               </a>
             </div>
@@ -119,14 +119,14 @@ export default function WeeklySessions() {
               <div className="flex-grow w-full overflow-hidden">
                 <FacebookSDK />
                 <div
-                    className="fb-page w-full h-full"
-                    data-href="https://www.facebook.com/DabistaneIqbal/"
-                    data-tabs="timeline"
-                    data-adapt-container-width="true"
-                    data-hide-cover="false"
-                    data-show-facepile="true"
-                    data-width="500"
-                  />
+                  className="fb-page w-full h-full"
+                  data-href="https://www.facebook.com/DabistaneIqbal/"
+                  data-tabs="timeline"
+                  data-adapt-container-width="true"
+                  data-hide-cover="false"
+                  data-show-facepile="true"
+                  data-width="500"
+                />
               </div>
             </div>
           </div>
